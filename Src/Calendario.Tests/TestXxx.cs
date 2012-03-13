@@ -10,29 +10,23 @@ namespace Calendario.Tests
     public class TestXxx
     {
         [TestMethod]
-        public void Test1()
+        public void WhenCalendarHasANonWorkingDayOfWeekReturnsItIsNonWorkingDay()
         {
             WorkingDatesCalendar argentineCalendar = new WorkingDatesCalendar();
+            argentineCalendar.AddNonWorkingDayOfWeek(DayOfWeek.Sunday);
             Assert.IsTrue(argentineCalendar.IsNonWorkingDate(someSunday()));
         }
 
         [TestMethod]
-        public void Test2()
+        public void WhenCalendarHasANonWorkingDayOfWeekReturnsItIsNotNonWorkingDayForOtherDay()
         {
             WorkingDatesCalendar argentineCalendar = new WorkingDatesCalendar();
+            argentineCalendar.AddNonWorkingDayOfWeek(DayOfWeek.Sunday);
             Assert.IsFalse(argentineCalendar.IsNonWorkingDate(someMonday()));
         }
 
         [TestMethod]
-        public void Test3()
-        {
-            WorkingDatesCalendar argentineCalendar = new WorkingDatesCalendar();
-            argentineCalendar.AddNonWorkingDayOfWeek(DayOfWeek.Saturday);
-            Assert.IsTrue(argentineCalendar.IsNonWorkingDate(someSaturday()));
-        }
-
-        [TestMethod]
-        public void Test4()
+        public void WhenCalendarHasANonWorkingDayOfWeekReturnsNonWorkingForThatDayOfWeekAndFalseForAnotherOne()
         {
             WorkingDatesCalendar argentineCalendar = new WorkingDatesCalendar();
             argentineCalendar.AddNonWorkingDayOfWeek(DayOfWeek.Sunday);
