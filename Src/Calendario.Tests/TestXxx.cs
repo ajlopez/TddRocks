@@ -23,6 +23,18 @@ namespace Calendario.Tests
             Assert.IsFalse(argentineCalendar.IsNonWorkingDate(someMonday()));
         }
 
+        [TestMethod]
+        public void Test3()
+        {
+            WorkingDatesCalendar argentineCalendar = new WorkingDatesCalendar();
+            Assert.IsTrue(argentineCalendar.IsNonWorkingDate(someSaturday()));
+        }
+
+        private DateTime someSaturday()
+        {
+            return new DateTime(2012, 3, 10);
+        }
+
         private DateTime someSunday()
         {
             return new DateTime(2012, 3, 11);
