@@ -27,7 +27,17 @@ namespace Calendario.Tests
         public void Test3()
         {
             WorkingDatesCalendar argentineCalendar = new WorkingDatesCalendar();
+            argentineCalendar.AddNonWorkingDayOfWeek(DayOfWeek.Saturday);
             Assert.IsTrue(argentineCalendar.IsNonWorkingDate(someSaturday()));
+        }
+
+        [TestMethod]
+        public void Test4()
+        {
+            WorkingDatesCalendar argentineCalendar = new WorkingDatesCalendar();
+            argentineCalendar.AddNonWorkingDayOfWeek(DayOfWeek.Sunday);
+            Assert.IsFalse(argentineCalendar.IsNonWorkingDate(someSaturday()));
+            Assert.IsTrue(argentineCalendar.IsNonWorkingDate(someSunday()));
         }
 
         private DateTime someSaturday()
