@@ -1,0 +1,24 @@
+<stylecopresultscache>
+  <version>11</version>
+  <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/13/2012 20:15:23</timestamp>
+      <milliseconds>982</milliseconds>
+    </settings>
+    <timestamp>03/13/2012 19:05:01</timestamp>
+    <milliseconds>894</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="-1797453432">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="WorkingDatesCalendar.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/13/2012 20:15:23</timestamp>
+      <milliseconds>982</milliseconds>
+    </settings>
+    <timestamp>03/13/2012 20:15:36</timestamp>
+    <milliseconds>947</milliseconds>
+    <violations />
+  </sourcecode>
+</stylecopresultscache>

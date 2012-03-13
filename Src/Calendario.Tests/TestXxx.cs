@@ -34,6 +34,16 @@ namespace Calendario.Tests
             Assert.IsTrue(argentineCalendar.IsNonWorkingDate(someSunday()));
         }
 
+        [TestMethod]
+        public void WhenCalendarHasTwoNonWorkingDayOfWeekAndReturnsNonWorkingForThoseDays()
+        {
+            WorkingDatesCalendar argentineCalendar = new WorkingDatesCalendar();
+            argentineCalendar.AddNonWorkingDayOfWeek(DayOfWeek.Saturday);
+            argentineCalendar.AddNonWorkingDayOfWeek(DayOfWeek.Sunday);
+            Assert.IsTrue(argentineCalendar.IsNonWorkingDate(someSaturday()));
+            Assert.IsTrue(argentineCalendar.IsNonWorkingDate(someSunday()));
+        }
+
         private DateTime someSaturday()
         {
             return new DateTime(2012, 3, 10);

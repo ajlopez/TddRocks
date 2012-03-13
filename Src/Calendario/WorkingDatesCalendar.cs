@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Calendario
+﻿namespace Calendario
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
     public class WorkingDatesCalendar
     {
-        private DayOfWeek nonWorkingDay;
+        private IList<DayOfWeek> nonWorkingDaysOfWeek = new List<DayOfWeek>();
 
         public bool IsNonWorkingDate(DateTime day)
         {
-            if (day.DayOfWeek == nonWorkingDay)
+            if (this.nonWorkingDaysOfWeek.Contains(day.DayOfWeek))
                 return true;
 
             return false;
@@ -19,7 +19,7 @@ namespace Calendario
 
         public void AddNonWorkingDayOfWeek(DayOfWeek dayOfWeek)
         {
-            this.nonWorkingDay = dayOfWeek;
+            this.nonWorkingDaysOfWeek.Add(dayOfWeek);
         }
     }
 }
