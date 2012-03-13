@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="b15aa40e-450d-493c-bbd0-075facf8053c" name="Angel@BOMBADIL 2012-03-13 19:27:55" runUser="Bombadil\Angel" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="15d3eb22-791a-4749-a73f-6e1ca71b841c">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Git\TddOnTheRocks\Src\TestResults\Angel_BOMBADIL 2012-03-13 19_27_55">
+      <DeploymentItem filename="C:\Git\TddOnTheRocks\Src\Calendario\bin\Debug\Calendario.dll" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2012-03-13T19:27:55.4410000-03:00" queuing="2012-03-13T19:27:55.9020000-03:00" start="2012-03-13T19:27:55.9560000-03:00" finish="2012-03-13T19:27:57.0630000-03:00" />
+  <TestDefinitions>
+    <UnitTest name="Test2" storage="c:\git\tddontherocks\src\calendario.tests\bin\debug\calendario.tests.dll" id="7ffd653d-b4b1-f6c3-6931-29426e55253b">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="2fca7de6-71c1-4ae2-b542-0172ef1aded5" />
+      <TestMethod codeBase="C:\Git\TddOnTheRocks\Src\Calendario.Tests\bin\Debug\Calendario.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Calendario.Tests.TestXxx, Calendario.Tests" name="Test2" />
+    </UnitTest>
+    <UnitTest name="Test1" storage="c:\git\tddontherocks\src\calendario.tests\bin\debug\calendario.tests.dll" id="b7a104c5-72af-6c36-3859-2bda66bdab3e">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="399718ad-a256-4185-a56f-668e16f25302" />
+      <TestMethod codeBase="C:\Git\TddOnTheRocks\Src\Calendario.Tests\bin\Debug\Calendario.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Calendario.Tests.TestXxx, Calendario.Tests" name="Test1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="7ffd653d-b4b1-f6c3-6931-29426e55253b" executionId="2fca7de6-71c1-4ae2-b542-0172ef1aded5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b7a104c5-72af-6c36-3859-2bda66bdab3e" executionId="399718ad-a256-4185-a56f-668e16f25302" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="2fca7de6-71c1-4ae2-b542-0172ef1aded5" testId="7ffd653d-b4b1-f6c3-6931-29426e55253b" testName="Test2" computerName="BOMBADIL" duration="00:00:00.0342654" startTime="2012-03-13T19:27:56.0180000-03:00" endTime="2012-03-13T19:27:56.9410000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="399718ad-a256-4185-a56f-668e16f25302" testId="b7a104c5-72af-6c36-3859-2bda66bdab3e" testName="Test1" computerName="BOMBADIL" duration="00:00:00.0043847" startTime="2012-03-13T19:27:56.9620000-03:00" endTime="2012-03-13T19:27:56.9700000-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

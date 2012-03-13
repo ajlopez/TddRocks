@@ -7,9 +7,12 @@ namespace Calendario
 {
     public class WorkingDatesCalendar
     {
-        public bool IsNonWorkingDate(DateTime dateTime)
+        public bool IsNonWorkingDate(DateTime day)
         {
-            return true;
+            if (day.DayOfWeek == DayOfWeek.Sunday)
+                return true;
+
+            return false;
         }
     }
 }
