@@ -44,6 +44,31 @@ namespace Calendario.Tests
             Assert.IsTrue(argentineCalendar.IsNonWorkingDate(someSunday()));
         }
 
+        [TestMethod]
+        public void WhenCalendarHasANonWorkingDayOfMonthThatDayIsNonWorkingDate()
+        {
+            WorkingDatesCalendar argentineCalendar = new WorkingDatesCalendar();
+            argentineCalendar.AddNonWorkingDayOfMonth(someJanuaryFirst());
+            Assert.IsTrue(argentineCalendar.IsNonWorkingDate(someJanuaryFirst()));
+        }
+
+        [TestMethod]
+        public void Test6()
+        {
+            WorkingDatesCalendar argentineCalendar = new WorkingDatesCalendar();
+            argentineCalendar.AddNonWorkingDayOfMonth(someJanuaryFirst());
+            Assert.IsFalse(argentineCalendar.IsNonWorkingDate(someNotJanuaryFirst()));
+        }
+
+        [TestMethod]
+        public void WhenCalendarHasTwoNonWorkingDayOfMonthThoseDaysAreNonWorkingDate()
+        {
+            WorkingDatesCalendar argentineCalendar = new WorkingDatesCalendar();
+            argentineCalendar.AddNonWorkingDayOfMonth(someJanuaryFirst());
+            argentineCalendar.AddNonWorkingDayOfMonth(someChrismas());
+            Assert.IsFalse(argentineCalendar.IsNonWorkingDate(someNotJanuaryFirst()));
+        }
+
         private DateTime someSaturday()
         {
             return new DateTime(2012, 3, 10);
@@ -57,6 +82,21 @@ namespace Calendario.Tests
         private DateTime someMonday()
         {
             return new DateTime(2012, 3, 12);
+        }
+
+        private DateTime someJanuaryFirst()
+        {
+            return new DateTime(2012, 1, 1);
+        }
+
+        private DateTime someNotJanuaryFirst()
+        {
+            return new DateTime(2012, 1, 2);
+        }
+
+        private DateTime someChrismas()
+        {
+            return new DateTime(2012, 12, 24);
         }
     }
 }

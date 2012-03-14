@@ -1,7 +1,0 @@
-C:\Git\TddOnTheRocks\Src\Calendario.Tests\obj\Debug\ResolveAssemblyReference.cache
-C:\Git\TddOnTheRocks\Src\Calendario.Tests\bin\Debug\Calendario.Tests.dll
-C:\Git\TddOnTheRocks\Src\Calendario.Tests\bin\Debug\Calendario.Tests.pdb
-C:\Git\TddOnTheRocks\Src\Calendario.Tests\bin\Debug\Calendario.dll
-C:\Git\TddOnTheRocks\Src\Calendario.Tests\bin\Debug\Calendario.pdb
-C:\Git\TddOnTheRocks\Src\Calendario.Tests\obj\Debug\Calendario.Tests.dll
-C:\Git\TddOnTheRocks\Src\Calendario.Tests\obj\Debug\Calendario.Tests.pdb
