@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingDays", "WorkingDays\WorkingDays.csproj", "{D14DFFE3-0025-4D6E-80A6-BDA34D43F59D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingDays.Tests", "WorkingDays.Tests\WorkingDays.Tests.csproj", "{EC57EB1D-05BC-40F5-8F99-FBEC7C8AC163}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9FF5FB36-A484-474C-9741-2A96513690C9}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		WorkingDays.vsmdi = WorkingDays.vsmdi
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = WorkingDays.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D14DFFE3-0025-4D6E-80A6-BDA34D43F59D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D14DFFE3-0025-4D6E-80A6-BDA34D43F59D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D14DFFE3-0025-4D6E-80A6-BDA34D43F59D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D14DFFE3-0025-4D6E-80A6-BDA34D43F59D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC57EB1D-05BC-40F5-8F99-FBEC7C8AC163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC57EB1D-05BC-40F5-8F99-FBEC7C8AC163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC57EB1D-05BC-40F5-8F99-FBEC7C8AC163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC57EB1D-05BC-40F5-8F99-FBEC7C8AC163}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
