@@ -1,0 +1,22 @@
+First method
+
+        [TestMethod]
+        public void TypicalMondayIsAWorkingDay()
+        {
+            WorkingDaysCalendar calendar = new WorkingDaysCalendar();
+            
+            DateTime monday = new DateTime(2012, 3, 12);
+
+            Assert.IsTrue(calendar.IsWorkingDay(monday));
+        }
+
+First class that compiles
+
+    public class WorkingDaysCalendar
+    {
+        public bool IsWorkingDay(DateTime day)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
