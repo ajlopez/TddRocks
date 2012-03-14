@@ -20,3 +20,9 @@ First class that compiles
         }
     }
 
+Test in green
+
+        public bool IsWorkingDay(DateTime day)
+        {
+            return true;
+        }

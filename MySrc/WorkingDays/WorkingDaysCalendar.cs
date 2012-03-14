@@ -9,7 +9,7 @@ namespace WorkingDays
     {
         public bool IsWorkingDay(DateTime day)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
