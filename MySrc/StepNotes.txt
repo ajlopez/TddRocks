@@ -78,3 +78,31 @@ Third Test
 
 Solution
 
+        public bool IsWorkingDay(DateTime day)
+        {
+            if (day.DayOfWeek == DayOfWeek.Sunday || day.DayOfWeek == DayOfWeek.Saturday)
+                return false;
+
+            return true;
+        }
+
+Forth Test
+Only to have a typical week described
+
+        [TestMethod]
+        public void TypicalWeek()
+        {
+            WorkingDaysCalendar calendar = new WorkingDaysCalendar();
+
+            DateTime monday = new DateTime(2012, 3, 12);
+            Assert.AreEqual(monday.DayOfWeek, DayOfWeek.Monday);
+
+            Assert.IsTrue(calendar.IsWorkingDay(monday));
+            Assert.IsTrue(calendar.IsWorkingDay(monday.AddDays(1)));
+            Assert.IsTrue(calendar.IsWorkingDay(monday.AddDays(2)));
+            Assert.IsTrue(calendar.IsWorkingDay(monday.AddDays(3)));
+            Assert.IsTrue(calendar.IsWorkingDay(monday.AddDays(4)));
+            Assert.IsFalse(calendar.IsWorkingDay(monday.AddDays(5)));
+            Assert.IsFalse(calendar.IsWorkingDay(monday.AddDays(6)));
+        }
+
