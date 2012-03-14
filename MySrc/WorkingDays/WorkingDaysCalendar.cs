@@ -9,6 +9,9 @@ namespace WorkingDays
     {
         public bool IsWorkingDay(DateTime day)
         {
+            if (day.DayOfWeek == DayOfWeek.Sunday)
+                return false;
+
             return true;
         }
     }

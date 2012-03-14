@@ -40,3 +40,25 @@ Enhanced test
             Assert.IsTrue(calendar.IsWorkingDay(monday));
         }
 
+Second Test
+
+        [TestMethod]
+        public void TypicalSundayIsANonWorkingDay()
+        {
+            WorkingDaysCalendar calendar = new WorkingDaysCalendar();
+
+            DateTime sunday = new DateTime(2012, 3, 11);
+            Assert.AreEqual(sunday.DayOfWeek, DayOfWeek.Sunday);
+
+            Assert.IsFalse(calendar.IsWorkingDay(sunday));
+        }
+
+Solution
+
+        public bool IsWorkingDay(DateTime day)
+        {
+            if (day.DayOfWeek == DayOfWeek.Sunday)
+                return false;
+
+            return true;
+        }
