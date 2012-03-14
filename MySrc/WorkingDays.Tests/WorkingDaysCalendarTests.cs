@@ -71,5 +71,18 @@ namespace WorkingDays.Tests
 
             Assert.IsTrue(calendar.IsWorkingDay(saturday));
         }
+
+        [TestMethod]
+        public void SetMondayAsANonWorkingDay()
+        {
+            WorkingDaysCalendar calendar = new WorkingDaysCalendar();
+
+            calendar.AddDayOfWeekAsNonWorkingDay(DayOfWeek.Monday);
+
+            DateTime monday = new DateTime(2012, 3, 12);
+            Assert.AreEqual(monday.DayOfWeek, DayOfWeek.Monday);
+
+            Assert.IsFalse(calendar.IsWorkingDay(monday));
+        }
     }
 }
