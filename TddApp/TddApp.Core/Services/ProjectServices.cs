@@ -24,5 +24,17 @@
         {
             return this.projects;
         }
+
+        public void AddProject(Project project)
+        {
+            int maxid = 0;
+
+            if (this.projects.Count > 0)
+                maxid = this.projects.Max(p => p.Id);
+
+            project.Id = maxid + 1;
+
+            this.projects.Add(project);
+        }
     }
 }

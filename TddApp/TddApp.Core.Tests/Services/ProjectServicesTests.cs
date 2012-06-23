@@ -37,5 +37,25 @@ namespace TddApp.Core.Tests.Services
 
             Assert.AreEqual(3, result.Count());
         }
+
+        [TestMethod]
+        public void AddProject()
+        {
+            var projects = new List<Project>()
+            {
+                new Project() { Id = 1, Name = "Project 1" },
+                new Project() { Id = 2, Name = "Project 2" },
+                new Project() { Id = 3, Name = "Project 3" }
+            };
+
+            Project project = new Project() { Name = "New Project" };
+
+            ProjectServices services = new ProjectServices(projects);
+
+            services.AddProject(project);
+
+            Assert.AreEqual(4, project.Id);
+            Assert.IsTrue(projects.Any(p => p.Name == "New Project"));
+        }
     }
 }

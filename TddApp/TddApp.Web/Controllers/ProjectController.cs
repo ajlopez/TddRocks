@@ -6,10 +6,11 @@
     using System.Web;
     using System.Web.Mvc;
     using TddApp.Core.Entities;
+    using TddApp.Core.Services;
 
     public class ProjectController : Controller
     {
-        private IList<Project> projects;
+        private ProjectServices services;
 
         public ProjectController()
             : this(Domain.Current.Projects)
@@ -17,13 +18,18 @@
         }
 
         public ProjectController(IList<Project> projects)
+            : this(new ProjectServices(projects))
         {
-            this.projects = projects;
+        }
+
+        public ProjectController(ProjectServices services)
+        {
+            this.services = services;
         }
 
         public ActionResult Index()
         {
-            return View(this.projects);
+            return View(this.services.GetProjects());
         }
 
         public ActionResult Create()
@@ -34,13 +40,7 @@
         [HttpPost]
         public ActionResult Create(Project project)
         {
-            int maxid = 0;
-            
-            if (this.projects.Count > 0)
-                maxid = this.projects.Max(p => p.Id);
-
-            project.Id = maxid + 1;
-            this.projects.Add(project);
+            this.services.AddProject(project);
             return RedirectToAction("Index");
         }
     }
