@@ -5,10 +5,11 @@
     using System.Linq;
     using System.Text;
     using TddApp.Core.Entities;
+    using TddApp.Core.Data;
 
     public class ProjectServices
     {
-        private IList<Project> projects;
+        private ProjectRepository repository;
 
         public ProjectServices()
             : this(new List<Project>())
@@ -16,25 +17,23 @@
         }
 
         public ProjectServices(IList<Project> projects)
+            : this(new ProjectRepository(projects))
         {
-            this.projects = projects;
+        }
+
+        public ProjectServices(ProjectRepository repository)
+        {
+            this.repository = repository;
         }
 
         public IEnumerable<Project> GetProjects()
         {
-            return this.projects;
+            return this.repository.GetProjects();
         }
 
         public void AddProject(Project project)
         {
-            int maxid = 0;
-
-            if (this.projects.Count > 0)
-                maxid = this.projects.Max(p => p.Id);
-
-            project.Id = maxid + 1;
-
-            this.projects.Add(project);
+            this.repository.AddProject(project);
         }
     }
 }
