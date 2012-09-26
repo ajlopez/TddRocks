@@ -48,7 +48,7 @@ namespace Projects
 
         public IList<Resource> GetTeam()
         {
-            throw new NotImplementedException();
+            return this.allocations.Select(alloc => alloc.Resource).Distinct().ToList();
         }
     }
 }
