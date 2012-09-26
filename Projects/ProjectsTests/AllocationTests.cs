@@ -32,6 +32,26 @@ namespace ProjectsTests
         }
 
         [TestMethod]
+        public void AllocateResourceTwoWeeksToProjectSkippingWeekEnd()
+        {
+            Project project = new Project();
+            Resource resource = new Resource();
+
+            DateTime fromDate = new DateTime(2012, 9, 11);
+            DateTime toDate = new DateTime(2012, 9, 21);
+            DateTime saturday = new DateTime(2012, 9, 15);
+            DateTime sunday = new DateTime(2012, 9, 16);
+            int dailyload = 6;
+
+            project.AllocateResource(resource, fromDate, toDate, dailyload);
+
+            var result = project.GetDailyLoad(resource, saturday);
+            Assert.AreEqual(0, result);
+            result = project.GetDailyLoad(resource, sunday);
+            Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void RaiseIfResourceIsNull()
         {

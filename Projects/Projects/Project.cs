@@ -20,6 +20,9 @@ namespace Projects
 
         public void AllocateResource(Resource resource, DateTime fromDate, DateTime toDate, int dailyload)
         {
+            if (resource == null)
+                throw new ArgumentNullException("resource");
+
             for (var day = fromDate; day <= toDate; day = day.AddDays(1))
                 this.allocations.Add(new ProjectAllocatedResource()
                 {
