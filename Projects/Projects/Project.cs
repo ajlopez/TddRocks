@@ -16,14 +16,27 @@ namespace Projects
     /// </summary>
     public class Project
     {
-        public void AllocateResource(Resource resource, DateTime fromDate, DateTime toDate, int p)
+        private IList<ProjectAllocatedResource> allocations = new List<ProjectAllocatedResource>();
+
+        public void AllocateResource(Resource resource, DateTime fromDate, DateTime toDate, int dailyload)
         {
-            throw new NotImplementedException();
+            for (var day = fromDate; day <= toDate; day = day.AddDays(1))
+                this.allocations.Add(new ProjectAllocatedResource()
+                {
+                    Resource = resource,
+                    Day = day,
+                    Load = dailyload
+                });
         }
 
-        public object GetDailyLoad(Resource resource, DateTime fromDate)
+        public int GetDailyLoad(Resource resource, DateTime fromDate)
         {
-            throw new NotImplementedException();
+            var allocation = this.allocations.FirstOrDefault(alloc => alloc.Day == fromDate && alloc.Resource == resource);
+
+            if (allocation == null)
+                return 0;
+
+            return allocation.Load;
         }
     }
 }
