@@ -45,5 +45,10 @@ namespace Projects
 
             return allocation.Load;
         }
+
+        public IList<Resource> GetTeam()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -13,6 +13,18 @@ namespace ProjectsTests
     [TestClass]
     public class AllocationTests
     {
+//        private Project project;
+        [TestInitialize]
+        public void Setup()
+        {
+  //          this.project = new Project();
+        }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+        }
+
         [TestMethod]
         public void AllocateResourceToProject()
         {
