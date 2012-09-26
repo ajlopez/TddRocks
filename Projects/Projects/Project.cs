@@ -24,12 +24,16 @@ namespace Projects
                 throw new ArgumentNullException("resource");
 
             for (var day = fromDate; day <= toDate; day = day.AddDays(1))
+            {
+                if (day.DayOfWeek == DayOfWeek.Saturday || day.DayOfWeek == DayOfWeek.Sunday)
+                    continue;
                 this.allocations.Add(new ProjectAllocatedResource()
                 {
                     Resource = resource,
                     Day = day,
                     Load = dailyload
                 });
+            }
         }
 
         public int GetDailyLoad(Resource resource, DateTime fromDate)
