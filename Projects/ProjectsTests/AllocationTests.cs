@@ -30,5 +30,18 @@ namespace ProjectsTests
             result = project.GetDailyLoad(resource, fromDate.AddDays(-1));
             Assert.AreEqual(0, result);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void RaiseIfResourceIsNull()
+        {
+            Project project = new Project();
+
+            DateTime fromDate = new DateTime(2012, 9, 18);
+            DateTime toDate = new DateTime(2012, 9, 20);
+            int dailyload = 6;
+
+            project.AllocateResource(null, fromDate, toDate, dailyload);
+        }
     }
 }
