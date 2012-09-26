@@ -17,11 +17,15 @@ namespace Projects
     public class Project
     {
         private IList<ProjectAllocatedResource> allocations = new List<ProjectAllocatedResource>();
+        private IList<Resource> team = new List<Resource>();
 
         public void AllocateResource(Resource resource, DateTime fromDate, DateTime toDate, int dailyload)
         {
             if (resource == null)
                 throw new ArgumentNullException("resource");
+
+            if (!this.team.Contains(resource))
+                this.team.Add(resource);
 
             for (var day = fromDate; day <= toDate; day = day.AddDays(1))
             {
@@ -48,7 +52,7 @@ namespace Projects
 
         public IList<Resource> GetTeam()
         {
-            return this.allocations.Select(alloc => alloc.Resource).Distinct().ToList();
+            return this.team;
         }
     }
 }
