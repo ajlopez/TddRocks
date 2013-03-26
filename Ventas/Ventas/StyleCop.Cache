@@ -21,13 +21,22 @@
   <project key="-1011622557">
     <configuration>DEBUG;TRACE</configuration>
   </project>
+  <sourcecode name="ItemFactura.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/26/2013 19:34:27</timestamp>
+      <milliseconds>270</milliseconds>
+    </settings>
+    <timestamp>03/26/2013 19:51:38</timestamp>
+    <milliseconds>76</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="Factura.cs" parser="StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/26/2013 19:34:27</timestamp>
       <milliseconds>270</milliseconds>
     </settings>
-    <timestamp>03/26/2013 19:34:58</timestamp>
-    <milliseconds>287</milliseconds>
+    <timestamp>03/26/2013 19:56:22</timestamp>
+    <milliseconds>142</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>
