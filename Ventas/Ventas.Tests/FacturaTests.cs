@@ -26,5 +26,17 @@ namespace Ventas.Tests
 
             Assert.AreEqual(20, factura.GetTotal());
         }
+
+        [TestMethod]
+        public void FacturaConDosProductGetTotal()
+        {
+            Factura factura = new Factura();
+            Producto producto1 = new Producto(10);
+            Producto producto2 = new Producto(20);
+            factura.AddProducto(producto1, 2);
+            factura.AddProducto(producto2, 1);
+
+            Assert.AreEqual(40, factura.GetTotal());
+        }
     }
 }

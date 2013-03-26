@@ -7,21 +7,16 @@
 
     public class Factura
     {
-        private Producto producto;
-        private int cantidad;
+        private IList<ItemFactura> items = new List<ItemFactura>();
 
         public decimal GetTotal()
         {
-            if (this.producto == null)
-                return 0;
-
-            return this.producto.Precio * this.cantidad;
+            return this.items.Sum(i => i.Precio);
         }
 
         public void AddProducto(Producto producto, int cantidad)
         {
-            this.producto = producto;
-            this.cantidad = cantidad;
+            this.items.Add(new ItemFactura(producto, cantidad));
         }
     }
 }
