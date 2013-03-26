@@ -7,9 +7,21 @@
 
     public class Factura
     {
+        private Producto producto;
+        private int cantidad;
+
         public decimal GetTotal()
         {
-            return 0;
+            if (producto == null)
+                return 0;
+
+            return producto.Precio * cantidad;
+        }
+
+        public void AddProducto(Producto producto, int cantidad)
+        {
+            this.producto = producto;
+            this.cantidad = cantidad;
         }
     }
 }
