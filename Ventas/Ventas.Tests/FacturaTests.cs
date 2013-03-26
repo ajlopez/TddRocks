@@ -28,6 +28,16 @@
         }
 
         [TestMethod]
+        public void FacturaAgregarProductoYConfirmarQueEsteAgregado()
+        {
+            Factura factura = new Factura();
+            Producto producto = new Producto(10);
+            factura.AddProducto(producto, 2);
+
+            Assert.IsTrue(factura.Items.Any(i => i.Producto == producto));
+        }
+
+        [TestMethod]
         public void FacturaConDosProductGetTotal()
         {
             Factura factura = new Factura();
@@ -37,6 +47,24 @@
             factura.AddProducto(producto2, 1);
 
             Assert.AreEqual(40, factura.GetTotal());
+        }
+
+        [TestMethod]
+        public void RaiseWhenProductoRepetido()
+        {
+            try
+            {
+                Factura factura = new Factura();
+                Producto producto = new Producto(10);
+                factura.AddProducto(producto, 2);
+                factura.AddProducto(producto, 1);
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(InvalidOperationException));
+                Assert.AreEqual("Producto Repetido", ex.Message);
+            }
         }
     }
 }

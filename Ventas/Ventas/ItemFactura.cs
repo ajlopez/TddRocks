@@ -16,6 +16,8 @@
             this.cantidad = cantidad;
         }
 
+        public Producto Producto { get { return this.producto; } }
+
         public decimal Precio { get { return this.producto.Precio * this.cantidad; } }
     }
 }
