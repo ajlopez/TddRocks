@@ -12,10 +12,10 @@
 
         public decimal GetTotal()
         {
-            if (producto == null)
+            if (this.producto == null)
                 return 0;
 
-            return producto.Precio * cantidad;
+            return this.producto.Precio * this.cantidad;
         }
 
         public void AddProducto(Producto producto, int cantidad)

@@ -1,0 +1,33 @@
+<stylecopresultscache>
+  <version>11</version>
+  <sourcecode name="Producto.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/26/2013 19:34:27</timestamp>
+      <milliseconds>270</milliseconds>
+    </settings>
+    <timestamp>03/26/2013 19:24:46</timestamp>
+    <milliseconds>787</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/26/2013 19:34:27</timestamp>
+      <milliseconds>270</milliseconds>
+    </settings>
+    <timestamp>03/26/2013 18:45:57</timestamp>
+    <milliseconds>901</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="-1011622557">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="Factura.cs" parser="StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/26/2013 19:34:27</timestamp>
+      <milliseconds>270</milliseconds>
+    </settings>
+    <timestamp>03/26/2013 19:34:58</timestamp>
+    <milliseconds>287</milliseconds>
+    <violations />
+  </sourcecode>
+</stylecopresultscache>
