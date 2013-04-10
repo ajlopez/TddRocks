@@ -15,6 +15,9 @@
             if (first == Play.Scissors)
                 return PlayResult.FirstPlayer;
 
+            if (first == Play.Paper && second == Play.Rock)
+                return PlayResult.FirstPlayer;
+
             return PlayResult.SecondPlayer;
         }
     }
