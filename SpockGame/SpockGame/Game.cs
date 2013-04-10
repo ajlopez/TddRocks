@@ -9,7 +9,7 @@
     {
         public PlayResult Play(Play play, Play play_2)
         {
-            throw new NotImplementedException();
+            return PlayResult.FirstPlayer;
         }
     }
 }
