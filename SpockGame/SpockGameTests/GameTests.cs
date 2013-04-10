@@ -165,5 +165,21 @@
 
             Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Rock, Play.Spock));
         }
+
+        [TestMethod]
+        public void RockBreaksScissors()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.FirstPlayer, game.DoPlay(Play.Rock, Play.Scissors));
+        }
+
+        [TestMethod]
+        public void ScissorsAreBrokenByRock()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Scissors, Play.Rock));
+        }
     }
 }
