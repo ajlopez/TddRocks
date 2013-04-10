@@ -34,5 +34,13 @@
             Assert.AreEqual(PlayResult.Tie, game.DoPlay(Play.Paper, Play.Paper));
             Assert.AreEqual(PlayResult.Tie, game.DoPlay(Play.Scissors, Play.Scissors));
         }
+
+        [TestMethod]
+        public void PaperCoversRock()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.FirstPlayer, game.DoPlay(Play.Paper, Play.Rock));
+        }
     }
 }

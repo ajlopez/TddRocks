@@ -8,6 +8,7 @@
     public enum Play
     {
         Scissors,
-        Paper
+        Paper,
+        Rock
     }
 }
