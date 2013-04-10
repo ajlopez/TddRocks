@@ -74,5 +74,13 @@
 
             Assert.AreEqual(PlayResult.FirstPlayer, game.DoPlay(Play.Lizard, Play.Spock));
         }
+
+        [TestMethod]
+        public void SpockIsPoisonedByLizard()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Spock, Play.Lizard));
+        }
     }
 }
