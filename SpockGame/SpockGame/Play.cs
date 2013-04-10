@@ -10,6 +10,7 @@
         Scissors,
         Paper,
         Rock,
-        Lizard
+        Lizard,
+        Spock
     }
 }

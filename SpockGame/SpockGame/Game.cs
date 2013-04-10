@@ -21,6 +21,9 @@
             if (first == Play.Rock && second == Play.Lizard)
                 return PlayResult.FirstPlayer;
 
+            if (first == Play.Lizard && second == Play.Spock)
+                return PlayResult.FirstPlayer;
+
             return PlayResult.SecondPlayer;
         }
     }
