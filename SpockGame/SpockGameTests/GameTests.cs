@@ -42,5 +42,13 @@
 
             Assert.AreEqual(PlayResult.FirstPlayer, game.DoPlay(Play.Paper, Play.Rock));
         }
+
+        [TestMethod]
+        public void RockIsCoveredByPaper()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Rock, Play.Paper));
+        }
     }
 }
