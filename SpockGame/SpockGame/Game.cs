@@ -12,22 +12,13 @@
             if (first == second)
                 return PlayResult.Tie;
 
-            if (first == Play.Spock && (second == Play.Scissors || second == Play.Rock))
-                return PlayResult.FirstPlayer;
+            int nfirst = (int)first;
+            int nsecond = (int)second;
 
-            if (first == Play.Scissors && (second == Play.Paper || second == Play.Lizard))
-                return PlayResult.FirstPlayer;
+            if (nsecond == (nfirst + 1) % 5 || nsecond == (nfirst + 2) % 5)
+                return PlayResult.SecondPlayer;
 
-            if (first == Play.Paper && (second == Play.Rock || second == Play.Spock))
-                return PlayResult.FirstPlayer;
-
-            if (first == Play.Rock && (second == Play.Lizard || second == Play.Scissors))
-                return PlayResult.FirstPlayer;
-
-            if (first == Play.Lizard && (second == Play.Spock || second == Play.Paper))
-                return PlayResult.FirstPlayer;
-
-            return PlayResult.SecondPlayer;
+            return PlayResult.FirstPlayer;
         }
     }
 }

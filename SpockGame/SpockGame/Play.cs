@@ -7,10 +7,10 @@
 
     public enum Play
     {
-        Scissors,
-        Paper,
-        Rock,
-        Lizard,
-        Spock
+        Rock = 0,
+        Spock = 1,
+        Paper = 2,
+        Lizard = 3,
+        Scissors = 4
     }
 }
