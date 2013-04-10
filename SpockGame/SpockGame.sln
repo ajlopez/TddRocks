@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpockGame", "SpockGame\SpockGame.csproj", "{72115C31-CBF2-48E0-B62F-CDF715643CC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpockGameTests", "SpockGameTests\SpockGameTests.csproj", "{C6CDD7A2-7824-4B52-BEB1-30821472FE23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7C2FD5D1-A0C7-46C2-BEAC-2C8B7C40018A}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		SpockGame.vsmdi = SpockGame.vsmdi
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SpockGame.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -13,6 +24,10 @@ Global
 		{72115C31-CBF2-48E0-B62F-CDF715643CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72115C31-CBF2-48E0-B62F-CDF715643CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72115C31-CBF2-48E0-B62F-CDF715643CC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6CDD7A2-7824-4B52-BEB1-30821472FE23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6CDD7A2-7824-4B52-BEB1-30821472FE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6CDD7A2-7824-4B52-BEB1-30821472FE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6CDD7A2-7824-4B52-BEB1-30821472FE23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
