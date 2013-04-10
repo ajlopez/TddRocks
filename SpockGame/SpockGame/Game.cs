@@ -12,7 +12,7 @@
             if (first == second)
                 return PlayResult.Tie;
 
-            if (first == Play.Spock && second == Play.Scissors)
+            if (first == Play.Spock && (second == Play.Scissors || second == Play.Rock))
                 return PlayResult.FirstPlayer;
 
             if (first == Play.Scissors)

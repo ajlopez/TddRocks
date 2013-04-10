@@ -149,5 +149,21 @@
 
             Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Spock, Play.Paper));
         }
+
+        [TestMethod]
+        public void SpockVaporizesRock()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.FirstPlayer, game.DoPlay(Play.Spock, Play.Rock));
+        }
+
+        [TestMethod]
+        public void RockIsVaporizedBySpock()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Rock, Play.Spock));
+        }
     }
 }
