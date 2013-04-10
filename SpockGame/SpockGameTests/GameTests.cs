@@ -50,5 +50,13 @@
 
             Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Rock, Play.Paper));
         }
+
+        [TestMethod]
+        public void RockCrushesLizard()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.FirstPlayer, game.DoPlay(Play.Rock, Play.Lizard));
+        }
     }
 }

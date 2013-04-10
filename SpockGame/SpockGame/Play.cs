@@ -9,6 +9,7 @@
     {
         Scissors,
         Paper,
-        Rock
+        Rock,
+        Lizard
     }
 }

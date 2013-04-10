@@ -18,6 +18,9 @@
             if (first == Play.Paper && second == Play.Rock)
                 return PlayResult.FirstPlayer;
 
+            if (first == Play.Rock && second == Play.Lizard)
+                return PlayResult.FirstPlayer;
+
             return PlayResult.SecondPlayer;
         }
     }
