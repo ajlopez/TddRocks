@@ -7,9 +7,15 @@
 
     public class Game
     {
-        public PlayResult Play(Play play, Play play_2)
+        public PlayResult DoPlay(Play first, Play second)
         {
-            return PlayResult.FirstPlayer;
+            if (first == second)
+                return PlayResult.Tie;
+
+            if (first == Play.Scissors)
+                return PlayResult.FirstPlayer;
+
+            return PlayResult.SecondPlayer;
         }
     }
 }

@@ -15,7 +15,7 @@
         {
             Game game = new Game();
 
-            Assert.AreEqual(PlayResult.FirstPlayer, game.Play(Play.Scissors, Play.Paper));
+            Assert.AreEqual(PlayResult.FirstPlayer, game.DoPlay(Play.Scissors, Play.Paper));
         }
 
         [TestMethod]
@@ -23,7 +23,16 @@
         {
             Game game = new Game();
 
-            Assert.AreEqual(PlayResult.SecondPlayer, game.Play(Play.Paper, Play.Scissors));
+            Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Paper, Play.Scissors));
+        }
+
+        [TestMethod]
+        public void Ties()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.Tie, game.DoPlay(Play.Paper, Play.Paper));
+            Assert.AreEqual(PlayResult.Tie, game.DoPlay(Play.Scissors, Play.Scissors));
         }
     }
 }
