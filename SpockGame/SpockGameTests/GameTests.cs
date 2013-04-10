@@ -114,5 +114,21 @@
 
             Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Lizard, Play.Scissors));
         }
+
+        [TestMethod]
+        public void LizardEatsPaper()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.FirstPlayer, game.DoPlay(Play.Lizard, Play.Paper));
+        }
+
+        [TestMethod]
+        public void PaperIsEatenByLizard()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Paper, Play.Lizard));
+        }
     }
 }
