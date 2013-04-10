@@ -33,6 +33,9 @@
 
             Assert.AreEqual(PlayResult.Tie, game.DoPlay(Play.Paper, Play.Paper));
             Assert.AreEqual(PlayResult.Tie, game.DoPlay(Play.Scissors, Play.Scissors));
+            Assert.AreEqual(PlayResult.Tie, game.DoPlay(Play.Spock, Play.Spock));
+            Assert.AreEqual(PlayResult.Tie, game.DoPlay(Play.Lizard, Play.Lizard));
+            Assert.AreEqual(PlayResult.Tie, game.DoPlay(Play.Rock, Play.Rock));
         }
 
         [TestMethod]
