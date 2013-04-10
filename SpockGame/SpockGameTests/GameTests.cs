@@ -98,5 +98,21 @@
 
             Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Scissors, Play.Spock));
         }
+
+        [TestMethod]
+        public void ScissorsDecapiteLizard()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.FirstPlayer, game.DoPlay(Play.Scissors, Play.Lizard));
+        }
+
+        [TestMethod]
+        public void LizardIsDecapitedByScissors()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Lizard, Play.Scissors));
+        }
     }
 }
