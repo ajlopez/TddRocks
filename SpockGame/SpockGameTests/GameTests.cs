@@ -17,5 +17,13 @@
 
             Assert.AreEqual(PlayResult.FirstPlayer, game.Play(Play.Scissors, Play.Paper));
         }
+
+        [TestMethod]
+        public void PaperIsCutByScissors()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.SecondPlayer, game.Play(Play.Paper, Play.Scissors));
+        }
     }
 }
