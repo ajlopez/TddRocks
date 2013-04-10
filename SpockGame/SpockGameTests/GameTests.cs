@@ -130,5 +130,21 @@
 
             Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Paper, Play.Lizard));
         }
+
+        [TestMethod]
+        public void PaperDisprovesSpock()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.FirstPlayer, game.DoPlay(Play.Paper, Play.Spock));
+        }
+
+        [TestMethod]
+        public void SpockIsDisprovedByPaper()
+        {
+            Game game = new Game();
+
+            Assert.AreEqual(PlayResult.SecondPlayer, game.DoPlay(Play.Spock, Play.Paper));
+        }
     }
 }

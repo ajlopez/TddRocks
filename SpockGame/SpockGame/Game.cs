@@ -21,7 +21,7 @@
                 else
                     return PlayResult.FirstPlayer;
 
-            if (first == Play.Paper && second == Play.Rock)
+            if (first == Play.Paper && (second == Play.Rock || second == Play.Spock))
                 return PlayResult.FirstPlayer;
 
             if (first == Play.Rock && second == Play.Lizard)
