@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlienLanguage", "AlienLanguage\AlienLanguage.csproj", "{8F9E2EA4-066D-4284-B1FB-F7AE223D9149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlienLanguageTests", "AlienLanguageTests\AlienLanguageTests.csproj", "{F08C030D-97BE-4331-8E62-A01C12582E59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E2CDEB06-B51F-4701-AA2D-4322709825D6}"
+	ProjectSection(SolutionItems) = preProject
+		AlienLanguage.vsmdi = AlienLanguage.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = AlienLanguage.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F9E2EA4-066D-4284-B1FB-F7AE223D9149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F9E2EA4-066D-4284-B1FB-F7AE223D9149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F9E2EA4-066D-4284-B1FB-F7AE223D9149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F9E2EA4-066D-4284-B1FB-F7AE223D9149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08C030D-97BE-4331-8E62-A01C12582E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08C030D-97BE-4331-8E62-A01C12582E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08C030D-97BE-4331-8E62-A01C12582E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08C030D-97BE-4331-8E62-A01C12582E59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
