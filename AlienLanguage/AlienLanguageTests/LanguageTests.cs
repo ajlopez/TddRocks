@@ -49,5 +49,23 @@
             Assert.AreEqual(1, result.Count());
             Assert.AreEqual("abc", result.First());
         }
+
+        [TestMethod]
+        public void AddWordsAndMatchPatter()
+        {
+            Language language = new Language();
+
+            language.AddWord("abc");
+            language.AddWord("cba");
+            language.AddWord("aaa");
+            language.AddWord("ccc");
+
+            var result = language.Match("(ac)b(ac)");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count());
+            Assert.IsTrue(result.Contains("abc"));
+            Assert.IsTrue(result.Contains("cba"));
+        }
     }
 }
