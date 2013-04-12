@@ -28,17 +28,30 @@
 
             foreach (var part in parts)
             {
+                if (part[0] == '(')
+                {
+                    pos++;
+                    continue;
+                }
+
+                int len = part.Length;
+                result = result.Where(w => w.Substring(pos, len) == part).ToList();
+                pos += len;
+            }
+
+            pos = 0;
+
+            foreach (var part in parts)
+            {
                 if (part[0] != '(')
                 {
                     int len = part.Length;
-                    result = result.Where(w => w.Substring(pos, len) == part).ToList();
                     pos += len;
+                    continue;
                 }
-                else
-                {
-                    result = result.Where(w => part.Contains(w[pos])).ToList();
-                    pos++;
-                }
+
+                result = result.Where(w => part.Contains(w[pos])).ToList();
+                pos++;
             }
 
             return result;
