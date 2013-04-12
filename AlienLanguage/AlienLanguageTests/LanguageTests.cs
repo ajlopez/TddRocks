@@ -20,5 +20,19 @@
             Assert.IsNotNull(result);
             Assert.AreEqual(0, result.Count());
         }
+
+        [TestMethod]
+        public void AddAndMatchWord()
+        {
+            Language language = new Language();
+
+            language.AddWord("abc");
+
+            var result = language.Match("abc");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count());
+            Assert.AreEqual("abc", result.First());
+        }
     }
 }
