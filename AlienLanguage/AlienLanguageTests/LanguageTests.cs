@@ -34,5 +34,20 @@
             Assert.AreEqual(1, result.Count());
             Assert.AreEqual("abc", result.First());
         }
+
+        [TestMethod]
+        public void AddWordsAndMatchWord()
+        {
+            Language language = new Language();
+
+            language.AddWord("abc");
+            language.AddWord("cba");
+
+            var result = language.Match("abc");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count());
+            Assert.AreEqual("abc", result.First());
+        }
     }
 }

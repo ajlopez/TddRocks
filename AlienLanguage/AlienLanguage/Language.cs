@@ -7,21 +7,21 @@
 
     public class Language
     {
-        private string word;
+        private IList<string> words = new List<string>();
 
         public IEnumerable<string> Match(string match)
         {
             var list = new List<string>();
 
-            if (match == this.word)
-                list.Add(this.word);
+            if (this.words.Contains(match))
+                list.Add(match);
 
             return list;
         }
 
         public void AddWord(string word)
         {
-            this.word = word;
+            this.words.Add(word);
         }
     }
 }
