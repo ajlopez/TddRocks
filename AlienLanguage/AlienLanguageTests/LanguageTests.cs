@@ -51,7 +51,7 @@
         }
 
         [TestMethod]
-        public void AddWordsAndMatchPatter()
+        public void AddWordsAndMatchPattern()
         {
             Language language = new Language();
 
@@ -66,6 +66,59 @@
             Assert.AreEqual(2, result.Count());
             Assert.IsTrue(result.Contains("abc"));
             Assert.IsTrue(result.Contains("cba"));
+        }
+
+        [TestMethod]
+        public void AddWordsAndMatchPatternWithManyLetters()
+        {
+            Language language = new Language();
+
+            language.AddWord("abbc");
+            language.AddWord("cbba");
+            language.AddWord("aaaa");
+            language.AddWord("cccc");
+
+            var result = language.Match("(ac)bb(ac)");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count());
+            Assert.IsTrue(result.Contains("abbc"));
+            Assert.IsTrue(result.Contains("cbba"));
+        }
+
+        [TestMethod]
+        public void AddWordsAndMatchPatternWithNoLetters()
+        {
+            Language language = new Language();
+
+            language.AddWord("abbc");
+            language.AddWord("cbba");
+            language.AddWord("aaaa");
+            language.AddWord("cccc");
+
+            var result = language.Match("(ac)(ba)(bc)(ac)");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count());
+            Assert.IsTrue(result.Contains("abbc"));
+            Assert.IsTrue(result.Contains("cbba"));
+        }
+
+        [TestMethod]
+        public void AddWordsAndMatchPatternStartingWithALetter()
+        {
+            Language language = new Language();
+
+            language.AddWord("abbc");
+            language.AddWord("cbba");
+            language.AddWord("aaaa");
+            language.AddWord("cccc");
+
+            var result = language.Match("ab(bc)(ac)");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count());
+            Assert.IsTrue(result.Contains("abbc"));
         }
     }
 }
