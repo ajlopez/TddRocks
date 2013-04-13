@@ -50,5 +50,25 @@
             Assert.AreEqual(1, result[0]);
             Assert.AreEqual(0, result[1]);
         }
+
+        [TestMethod]
+        public void CanOpenFourChestsWithOneKey()
+        {
+            Trove trove = new Trove();
+            trove.AddKey(1);
+            trove.AddChest(new Chest(1, new int[] { }));
+            trove.AddChest(new Chest(1, new int[] { 1, 3 }));
+            trove.AddChest(new Chest(2, new int[] { }));
+            trove.AddChest(new Chest(3, new int[] { 2 }));
+
+            var result = trove.GetSolution();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(4, result.Count);
+            Assert.AreEqual(1, result[0]);
+            Assert.AreEqual(0, result[1]);
+            Assert.AreEqual(3, result[2]);
+            Assert.AreEqual(2, result[3]);
+        }
     }
 }
