@@ -97,5 +97,37 @@
 
             Assert.AreEqual(Status.NotCompleted, board.Evaluate());
         }
+
+        [TestMethod]
+        public void EvaluateFirstDiagonalWithXs()
+        {
+            Board board = new Board("X....X....X....X");
+
+            Assert.AreEqual(Status.XWon, board.Evaluate());
+        }
+
+        [TestMethod]
+        public void EvaluateFirstDiagonalWithXsAndT()
+        {
+            Board board = new Board("X....X....T....X");
+
+            Assert.AreEqual(Status.XWon, board.Evaluate());
+        }
+
+        [TestMethod]
+        public void EvaluateSecondDiagonalWithOs()
+        {
+            Board board = new Board("...O..O..O..O...");
+
+            Assert.AreEqual(Status.OWon, board.Evaluate());
+        }
+
+        [TestMethod]
+        public void EvaluateSecondDiagonalWithOsAndT()
+        {
+            Board board = new Board("...O..T..O..O...");
+
+            Assert.AreEqual(Status.OWon, board.Evaluate());
+        }
     }
 }

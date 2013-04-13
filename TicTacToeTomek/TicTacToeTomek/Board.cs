@@ -40,6 +40,12 @@
                 result = this.EvaluateFour(j, 0, 0, 1);
                 if (result == Status.XWon || result == Status.OWon)
                     return result;
+                result = this.EvaluateFour(0, 0, 1, 1);
+                if (result == Status.XWon || result == Status.OWon)
+                    return result;
+                result = this.EvaluateFour(3, 0, -1, 1);
+                if (result == Status.XWon || result == Status.OWon)
+                    return result;
             }
 
             return Status.NotCompleted;
