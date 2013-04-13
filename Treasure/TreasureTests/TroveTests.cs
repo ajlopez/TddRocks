@@ -21,5 +21,19 @@
             Assert.IsNotNull(result);
             Assert.AreEqual(0, result.Count);
         }
+
+        [TestMethod]
+        public void CanOpenChestWithKey()
+        {
+            Trove trove = new Trove();
+            trove.AddKey(1);
+            trove.AddChest(new Chest(1, new int[] { 2, 3 }));
+
+            var result = trove.GetSolution();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(0, result[0]);
+        }
     }
 }
