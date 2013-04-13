@@ -34,26 +34,49 @@
         {
             for (int j = 0; j < 4; j++)
             {
-                int nx = 0;
-                int no = 0;
-                int nt = 0;
-
-                for (int k = 0; k < 4; k++)
-                    if (this.cells[j, k] == 'X')
-                        nx++;
-                    else if (this.cells[j, k] == 'O')
-                        no++;
-                    else if (this.cells[j, k] == 'T')
-                        nt++;
-
-                if (nx == 4 || (nx == 3 && nt == 1))
-                    return Status.XWon;
-
-                if (no == 4 || (no == 3 && nt == 1))
-                    return Status.OWon;
+                var result = this.EvaluateFour(0, j, 1, 0);
+                if (result == Status.XWon || result == Status.OWon)
+                    return result;
+                result = this.EvaluateFour(j, 0, 0, 1);
+                if (result == Status.XWon || result == Status.OWon)
+                    return result;
             }
 
             return Status.NotCompleted;
+        }
+
+        private Status EvaluateFour(int k0, int j0, int dk, int dj)
+        {
+            int nx = 0;
+            int no = 0;
+            int nt = 0;
+            int ne = 0;
+
+            for (int x = 0; x < 4; x++)
+            {
+                int k = k0 + x * dk;
+                int j = j0 + x * dj;
+
+                if (this.cells[j, k] == 'X')
+                    nx++;
+                else if (this.cells[j, k] == 'O')
+                    no++;
+                else if (this.cells[j, k] == 'T')
+                    nt++;
+                else
+                    ne++;
+            }
+
+            if (nx == 4 || (nx == 3 && nt == 1))
+                return Status.XWon;
+
+            if (no == 4 || (no == 3 && nt == 1))
+                return Status.OWon;
+
+            if (ne > 0)
+                return Status.NotCompleted;
+
+            return Status.Draw;
         }
     }
 }

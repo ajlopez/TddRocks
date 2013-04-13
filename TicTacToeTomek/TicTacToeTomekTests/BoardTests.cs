@@ -65,5 +65,13 @@
 
             Assert.AreEqual(Status.OWon, board.Evaluate());
         }
+
+        [TestMethod]
+        public void EvaluateSecondColumnWithXs()
+        {
+            Board board = new Board(".XO..XT..XX..XO.");
+
+            Assert.AreEqual(Status.XWon, board.Evaluate());
+        }
     }
 }
