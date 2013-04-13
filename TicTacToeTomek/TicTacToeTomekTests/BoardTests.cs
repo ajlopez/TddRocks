@@ -73,5 +73,21 @@
 
             Assert.AreEqual(Status.XWon, board.Evaluate());
         }
+
+        [TestMethod]
+        public void EvaluateSecondColumnWithXsAndT()
+        {
+            Board board = new Board(".XO..XT..TX..XO.");
+
+            Assert.AreEqual(Status.XWon, board.Evaluate());
+        }
+
+        [TestMethod]
+        public void EvaluateFourthColumnWithOs()
+        {
+            Board board = new Board("...O...O...O...O");
+
+            Assert.AreEqual(Status.OWon, board.Evaluate());
+        }
     }
 }
