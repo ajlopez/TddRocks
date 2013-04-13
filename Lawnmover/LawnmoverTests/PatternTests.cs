@@ -65,6 +65,25 @@
         }
 
         [TestMethod]
+        public void ValidRowMoveAfterMove()
+        {
+            Pattern pattern = new Pattern(2, 2);
+
+            pattern.SetRow(0, "1 2");
+            pattern.SetRow(1, "2 3");
+
+            pattern.MoveRow(1, 3);
+
+            Assert.IsTrue(pattern.IsValidRowMove(0, 2));
+            Assert.IsFalse(pattern.IsValidRowMove(0, 1));
+            Assert.IsFalse(pattern.IsValidRowMove(0, 0));
+
+            Assert.IsFalse(pattern.IsValidRowMove(1, 3));
+            Assert.IsFalse(pattern.IsValidRowMove(1, 2));
+            Assert.IsFalse(pattern.IsValidRowMove(1, 1));
+        }
+
+        [TestMethod]
         public void ValidColumnMove()
         {
             Pattern pattern = new Pattern(2, 2);
@@ -77,6 +96,25 @@
             Assert.IsFalse(pattern.IsValidColumnMove(0, 0));
 
             Assert.IsTrue(pattern.IsValidColumnMove(1, 3));
+            Assert.IsFalse(pattern.IsValidColumnMove(1, 2));
+            Assert.IsFalse(pattern.IsValidColumnMove(1, 1));
+        }
+
+        [TestMethod]
+        public void ValidColumnMoveAfterMove()
+        {
+            Pattern pattern = new Pattern(2, 2);
+
+            pattern.SetRow(0, "1 2");
+            pattern.SetRow(1, "4 3");
+
+            pattern.MoveColumn(1, 4);
+
+            Assert.IsTrue(pattern.IsValidColumnMove(0, 4));
+            Assert.IsFalse(pattern.IsValidColumnMove(0, 1));
+            Assert.IsFalse(pattern.IsValidColumnMove(0, 0));
+
+            Assert.IsFalse(pattern.IsValidColumnMove(1, 3));
             Assert.IsFalse(pattern.IsValidColumnMove(1, 2));
             Assert.IsFalse(pattern.IsValidColumnMove(1, 1));
         }

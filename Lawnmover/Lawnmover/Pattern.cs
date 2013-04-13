@@ -50,6 +50,9 @@
 
         public bool IsValidRowMove(int nrow, int move)
         {
+            if (this.rowmoves[nrow] > 0)
+                return false;
+
             for (int k = 0; k < this.width; k++)
                 if (this.cells[nrow, k] > move)
                     return false;
@@ -59,6 +62,9 @@
 
         public bool IsValidColumnMove(int ncol, int move)
         {
+            if (columnmoves[ncol] > 0)
+                return false;
+
             for (int k = 0; k < this.width; k++)
                 if (this.cells[k, ncol] > move)
                     return false;
