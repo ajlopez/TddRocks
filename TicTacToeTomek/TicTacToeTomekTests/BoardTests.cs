@@ -89,5 +89,13 @@
 
             Assert.AreEqual(Status.OWon, board.Evaluate());
         }
+
+        [TestMethod]
+        public void EvaluateThreeOs()
+        {
+            Board board = new Board("...O...O...O....");
+
+            Assert.AreEqual(Status.NotCompleted, board.Evaluate());
+        }
     }
 }
