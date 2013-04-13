@@ -180,5 +180,21 @@
 
             Assert.IsNull(result);
         }
+
+        [TestMethod]
+        public void GoogleSmallCaseSubNine()
+        {
+            Trove trove = new Trove();
+            trove.AddKeys("1 4");
+            trove.AddChest(new Chest("3 2 1 1"));
+            trove.AddChest(new Chest("3 2 1 4"));
+            trove.AddChest(new Chest("1 2 1 4"));
+            trove.AddChest(new Chest("3 1 3"));
+            trove.AddChest(new Chest("4 1 4"));
+
+            var result = trove.GetSolution();
+
+            Assert.IsNull(result);
+        }
     }
 }
