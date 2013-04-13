@@ -83,14 +83,20 @@
             for (int x = 0; x < width; x++)
                 for (int y = 0; y < height; y++)
                 {
-                    int value = this.cells[y, x];
-                    if (this.rowmoves[y] == value || this.columnmoves[x] == value)
+                    if (this.IsSolved(y, x))
                         continue;
+                    int value = this.cells[y, x];
                     if (result == null || result.Value < value)
                         result = new Cell() { Row = y, Column = x, Value = value };
                 }
 
             return result;
+        }
+
+        public bool IsSolved(int nrow, int ncol)
+        {
+            int value = this.cells[nrow, ncol];
+            return this.rowmoves[nrow] == value || this.columnmoves[ncol] == value;
         }
     }
 }
