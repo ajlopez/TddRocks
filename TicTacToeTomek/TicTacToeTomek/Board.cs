@@ -50,7 +50,7 @@
                     return Status.OWon;
             }
 
-            return Status.Tie;
+            return Status.Draw;
         }
     }
 }

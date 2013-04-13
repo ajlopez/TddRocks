@@ -9,6 +9,6 @@
     {
         XWon,
         OWon,
-        Tie
+        Draw
     }
 }
