@@ -21,6 +21,7 @@
 
             for (int k = 0; k < ncases; k++) 
             {
+                Console.WriteLine(string.Format("Solving Case #{0}", k + 1));
                 nline++;
                 string[] numbers = lines[nline].Split(' ');
                 int height = int.Parse(numbers[0]);
@@ -31,6 +32,7 @@
                 {
                     nline++;
                     pattern.SetRow(j, lines[nline]);
+                    Console.WriteLine(lines[nline]);
                 }
 
                 results.Add(string.Format("Case #{0}: {1}", k+1, pattern.HasSolution() ? "YES" : "NO"));

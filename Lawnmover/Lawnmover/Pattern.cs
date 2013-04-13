@@ -54,8 +54,12 @@
                 return false;
 
             for (int k = 0; k < this.width; k++)
+            {
                 if (this.cells[nrow, k] > move)
                     return false;
+                if (this.cells[nrow, k] < move && !this.IsValidColumnMove(k, this.cells[nrow, k]))
+                    return false;
+            }
 
             return true;
         }
@@ -66,8 +70,12 @@
                 return false;
 
             for (int k = 0; k < this.height; k++)
+            {
                 if (this.cells[k, ncol] > move)
                     return false;
+                if (this.cells[k, ncol] < move && !this.IsValidRowMove(k, this.cells[k, ncol]))
+                    return false;
+            }
 
             return true;
         }
@@ -115,7 +123,7 @@
             if (this.IsValidRowMove(cell.Row, cell.Value))
             {
                 this.MoveRow(cell.Row, cell.Value);
-                if (this.HasSolution())
+                if (this.HasSolutionOnRow(cell.Row))
                     return true;
                 this.MoveRow(cell.Row, 0);
             }
@@ -123,12 +131,45 @@
             if (this.IsValidColumnMove(cell.Column, cell.Value))
             {
                 this.MoveColumn(cell.Column, cell.Value);
-                if (this.HasSolution())
+                if (this.HasSolutionOnColumn(cell.Column))
                     return true;
                 this.MoveColumn(cell.Column, 0);
             }
 
             return false;
+        }
+
+        public bool HasSolutionOnRow(int nrow)
+        {
+            for (int k = 0; k < this.width; k++)
+                if (!this.IsSolved(nrow, k))
+                    if (!this.IsValidColumnMove(k, this.cells[nrow, k]))
+                        return false;
+
+            return this.HasSolution();
+        }
+
+        public bool HasSolutionOnColumn(int ncol)
+        {
+            for (int k = 0; k < this.height; k++)
+                if (!this.IsSolved(k, ncol))
+                    if (!this.IsValidRowMove(k, this.cells[k, ncol]))
+                        return false;
+
+            int[] nmoves = new int[this.height];
+
+            Array.Copy(this.rowmoves, nmoves, this.rowmoves.Length);
+
+            for (int k = 0; k < this.height; k++)
+                if (!this.IsSolved(k, ncol))
+                    this.MoveRow(k, this.cells[k, ncol]);
+
+            var result = this.HasSolution();
+
+            if (!result)
+                Array.Copy(nmoves, this.rowmoves, this.rowmoves.Length);
+
+            return result;
         }
     }
 }
