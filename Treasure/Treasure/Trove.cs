@@ -8,6 +8,7 @@
     public class Trove
     {
         private KeySet keys = new KeySet();
+        private KeySet availablekeys = new KeySet();
         private IList<Chest> chests = new List<Chest>();
 
         public IList<int> GetSolution()
@@ -32,11 +33,13 @@
         public void AddChest(Chest chest)
         {
             this.chests.Add(chest);
+            this.availablekeys = this.availablekeys.Add(chest.Keys);
         }
 
         public void AddKey(int key)
         {
             this.keys = this.keys.Add(key);
+            this.availablekeys = this.availablekeys.Add(key);
         }
     }
 }
