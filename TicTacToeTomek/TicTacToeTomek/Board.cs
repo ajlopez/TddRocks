@@ -36,17 +36,20 @@
             {
                 int nx = 0;
                 int no = 0;
+                int nt = 0;
 
                 for (int k = 0; k < 4; k++)
                     if (this.cells[j, k] == 'X')
                         nx++;
                     else if (this.cells[j, k] == 'O')
                         no++;
+                    else if (this.cells[j, k] == 'T')
+                        nt++;
 
-                if (nx == 4)
+                if (nx == 4 || (nx == 3 && nt == 1))
                     return Status.XWon;
 
-                if (no == 4)
+                if (no == 4 || (no == 3 && nt == 1))
                     return Status.OWon;
             }
 

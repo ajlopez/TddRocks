@@ -49,5 +49,21 @@
 
             Assert.AreEqual(Status.OWon, board.Evaluate());
         }
+
+        [TestMethod]
+        public void EvaluateFirstRowWithXsAndT()
+        {
+            Board board = new Board("XTXX");
+
+            Assert.AreEqual(Status.XWon, board.Evaluate());
+        }
+
+        [TestMethod]
+        public void EvaluateSecondRowWithOsAndT()
+        {
+            Board board = new Board("....OTOO");
+
+            Assert.AreEqual(Status.OWon, board.Evaluate());
+        }
     }
 }
