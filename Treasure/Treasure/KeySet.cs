@@ -41,5 +41,13 @@
             newkeys.Remove(key);
             return new KeySet(newkeys);
         }
+
+        public KeySet Remove(IEnumerable<int> keys)
+        {
+            var newkeys = new List<int>(this.keys);
+            foreach (var key in keys)
+                newkeys.Remove(key);
+            return new KeySet(newkeys);
+        }
     }
 }

@@ -22,11 +22,13 @@
 
             for (int n = 0; n < ncase; n++)
             {
+                Console.WriteLine(string.Format("Solving #{0}", n + 1));
                 nline++;
                 string[] numbers = lines[nline].Split(' ');
                 int nchests = int.Parse(numbers[1]);
                 nline++;
                 numbers = lines[nline].Split(' ');
+                Console.WriteLine(lines[nline]);
                 Trove trove = new Trove();
                 
                 foreach (var number in numbers)

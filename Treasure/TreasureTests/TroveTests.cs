@@ -102,5 +102,83 @@
 
             Assert.IsNull(result);
         }
+
+        [TestMethod]
+        public void GoogleSmallCaseOne()
+        {
+            Trove trove = new Trove();
+            trove.AddKeys("1 1 1");
+            trove.AddChest(new Chest("2 2 2 2"));
+            trove.AddChest(new Chest("1 0"));
+            trove.AddChest(new Chest("1 3 1 1 1"));
+            trove.AddChest(new Chest("1 1 1"));
+            trove.AddChest(new Chest("1 1 2"));
+            trove.AddChest(new Chest("2 0"));
+            trove.AddChest(new Chest("1 1 1"));
+            trove.AddChest(new Chest("2 2 1 1"));
+            trove.AddChest(new Chest("2 3 1 2 2"));
+            trove.AddChest(new Chest("2 1 2"));
+
+            var result = trove.GetSolution();
+
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void GoogleSmallCaseTwo()
+        {
+            Trove trove = new Trove();
+            trove.AddKeys("5 2 2 2 2 4 2 3 3 1 4 2 1 4 3 3 1 2 2 2");
+            trove.AddChest(new Chest("1 2 2 2"));
+            trove.AddChest(new Chest("2 2 5 2"));
+            trove.AddChest(new Chest("1 1 5"));
+            trove.AddChest(new Chest("3 1 4"));
+            trove.AddChest(new Chest("4 3 2 5 3"));
+            trove.AddChest(new Chest("3 1 2"));
+            trove.AddChest(new Chest("4 3 3 5 1"));
+            trove.AddChest(new Chest("3 1 2"));
+            trove.AddChest(new Chest("4 2 4 5"));
+            trove.AddChest(new Chest("3 0"));
+            trove.AddChest(new Chest("5 1 2"));
+            trove.AddChest(new Chest("5 2 3 4"));
+            trove.AddChest(new Chest("1 0"));
+            trove.AddChest(new Chest("3 1 5"));
+            trove.AddChest(new Chest("1 0"));
+
+            var result = trove.GetSolution();
+
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void GoogleSmallCaseNine()
+        {
+            Trove trove = new Trove();
+            trove.AddKeys("3 4 3");
+            trove.AddChest(new Chest("4 0"));
+            trove.AddChest(new Chest("4 3 2 3 3"));
+            trove.AddChest(new Chest("4 0"));
+            trove.AddChest(new Chest("2 0"));
+            trove.AddChest(new Chest("1 2 1 4"));
+            trove.AddChest(new Chest("3 0"));
+            trove.AddChest(new Chest("3 2 3 2"));
+            trove.AddChest(new Chest("2 2 3 4"));
+            trove.AddChest(new Chest("4 0"));
+            trove.AddChest(new Chest("3 1 4"));
+            trove.AddChest(new Chest("3 2 1 1"));
+            trove.AddChest(new Chest("4 0"));
+            trove.AddChest(new Chest("4 3 4 2 4"));
+            trove.AddChest(new Chest("3 2 3 4"));
+            trove.AddChest(new Chest("3 0"));
+            trove.AddChest(new Chest("1 3 2 4 4"));
+            trove.AddChest(new Chest("3 1 4"));
+            trove.AddChest(new Chest("3 2 1 4"));
+            trove.AddChest(new Chest("3 1 3"));
+            trove.AddChest(new Chest("4 1 4"));
+
+            var result = trove.GetSolution();
+
+            Assert.IsNull(result);
+        }
     }
 }

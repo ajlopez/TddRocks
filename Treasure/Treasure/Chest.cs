@@ -11,6 +11,16 @@
         private IList<int> keys;
         private bool opened;
 
+        public Chest(string definition)
+        {
+            string[] numbers = definition.Split(' ');
+            this.key = int.Parse(numbers[0]);
+            this.keys = new List<int>();
+
+            for (int k = 2; k < numbers.Length; k++)
+                this.keys.Add(int.Parse(numbers[k]));
+        }
+
         public Chest(int key, IList<int> keys)
         {
             this.key = key;

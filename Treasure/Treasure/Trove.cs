@@ -13,20 +13,30 @@
 
         public IList<int> GetSolution()
         {
-            var result = this.GetSolution(new int[] { });
+            var toopen = this.chests.Where(ch => !ch.Opened).ToList();
+            KeySet keyset = new KeySet();
 
+            foreach (var chest in toopen)
+                keyset = keyset.Add(chest.Keys);
+
+            var result = this.GetSolution(new int[] { }, toopen, keyset);
             if (result == null)
                 return null;
 
             return result.ToList();
         }
 
-        public IEnumerable<int> GetSolution(IEnumerable<int> opened)
+        public IEnumerable<int> GetSolution(IEnumerable<int> opened, IList<Chest> toopen, KeySet keyset)
         {
-            var toopen = this.chests.Where(ch => !ch.Opened);
-
             if (toopen.Count() == 0)
                 return opened;
+
+            foreach (var chest in toopen.Where(ch => !this.keys.Keys.Contains(ch.Key))) 
+            {
+                var newset = keyset.Remove(chest.Keys);
+                if (!newset.Keys.Contains(chest.Key))
+                    return null;
+            }
 
             foreach (var chest in toopen.Where(ch => this.keys.Keys.Contains(ch.Key)))
             {
@@ -41,10 +51,14 @@
                 this.keys = this.keys.Remove(key);
                 this.keys = this.keys.Add(chest.Keys);
 
-                var newopened = this.GetSolution(result);
+                var newtoopen = new List<Chest>(toopen);
+                newtoopen.Remove(chest);
+                var newkeyset = keyset.Remove(chest.Keys);
 
-                if (newopened != null)
-                    return newopened;
+                var newresult = this.GetSolution(result, newtoopen, newkeyset);
+
+                if (newresult != null)
+                    return newresult;
 
                 chest.Close();
 
@@ -64,6 +78,14 @@
         {
             this.keys = this.keys.Add(key);
             this.availablekeys = this.availablekeys.Add(key);
+        }
+
+        public void AddKeys(string keys)
+        {
+            string[] numbers = keys.Split(' ');
+
+            foreach (var number in numbers)
+                this.AddKey(int.Parse(number));
         }
     }
 }
