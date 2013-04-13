@@ -61,11 +61,11 @@
 
             string result = string.Empty;
 
-            foreach (int n in solution)
+            foreach (int n in solution.Skip(1))
             {
                 if (!string.IsNullOrEmpty(result))
                     result += " ";
-                result += (n+1).ToString();
+                result += n.ToString();
             }
 
             return result;
