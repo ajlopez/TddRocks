@@ -70,5 +70,25 @@
             Assert.AreEqual(3, result[2]);
             Assert.AreEqual(2, result[3]);
         }
+
+        [TestMethod]
+        public void CanOpenThreeChestsWithThreeKeys()
+        {
+            Trove trove = new Trove();
+            trove.AddKey(1);
+            trove.AddKey(1);
+            trove.AddKey(1);
+            trove.AddChest(new Chest(1, new int[] { }));
+            trove.AddChest(new Chest(1, new int[] { }));
+            trove.AddChest(new Chest(1, new int[] { }));
+
+            var result = trove.GetSolution();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual(0, result[0]);
+            Assert.AreEqual(1, result[1]);
+            Assert.AreEqual(2, result[2]);
+        }
     }
 }
