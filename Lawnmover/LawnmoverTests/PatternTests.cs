@@ -170,5 +170,52 @@
             Assert.AreEqual(1, result.Column);
             Assert.AreEqual(3, result.Value);
         }
+
+        [TestMethod]
+        public void HasSolution2x2()
+        {
+            Pattern pattern = new Pattern(2, 2);
+
+            pattern.SetRow(0, "1 2");
+            pattern.SetRow(1, "4 3");
+
+            Assert.IsFalse(pattern.HasSolution());
+        }
+
+        [TestMethod]
+        public void HasSolution3x3()
+        {
+            Pattern pattern = new Pattern(3, 3);
+
+            pattern.SetRow(0, "2 1 2");
+            pattern.SetRow(1, "1 1 1");
+            pattern.SetRow(2, "2 1 2");
+
+            Assert.IsTrue(pattern.HasSolution());
+        }
+
+        [TestMethod]
+        public void HasSolution5x5()
+        {
+            Pattern pattern = new Pattern(5, 5);
+
+            pattern.SetRow(0, "2 2 2 2 2");
+            pattern.SetRow(1, "2 1 1 1 2");
+            pattern.SetRow(2, "2 1 2 1 2");
+            pattern.SetRow(2, "2 1 1 1 2");
+            pattern.SetRow(2, "2 2 2 2 2");
+
+            Assert.IsFalse(pattern.HasSolution());
+        }
+
+        [TestMethod]
+        public void HasSolution3x1()
+        {
+            Pattern pattern = new Pattern(3, 1);
+
+            pattern.SetRow(0, "1 2 1");
+
+            Assert.IsTrue(pattern.HasSolution());
+        }
     }
 }

@@ -17,10 +17,14 @@
         {
             this.width = width;
             this.height = height;
-            this.cells = new int[width, height];
+            this.cells = new int[height, width];
             this.rowmoves = new int[height];
             this.columnmoves = new int[width];
         }
+
+        public int Width { get { return this.width; } }
+
+        public int Height { get { return this.height; } }
 
         public void SetRow(int nrow, string values)
         {
@@ -32,10 +36,6 @@
 
             this.SetRow(nrow, ivalues);
         }
-
-        public int Width { get { return this.width; } }
-
-        public int Height { get { return this.height; } }
 
         public void SetRow(int nrow, IList<int> values)
         {
@@ -65,7 +65,7 @@
             if (columnmoves[ncol] > 0)
                 return false;
 
-            for (int k = 0; k < this.width; k++)
+            for (int k = 0; k < this.height; k++)
                 if (this.cells[k, ncol] > move)
                     return false;
 
@@ -103,6 +103,32 @@
         {
             int value = this.cells[nrow, ncol];
             return this.rowmoves[nrow] == value || this.columnmoves[ncol] == value;
+        }
+
+        public bool HasSolution()
+        {
+            Cell cell = this.GetMaxUnsolved();
+
+            if (cell == null)
+                return true;
+
+            if (this.IsValidRowMove(cell.Row, cell.Value))
+            {
+                this.MoveRow(cell.Row, cell.Value);
+                if (this.HasSolution())
+                    return true;
+                this.MoveRow(cell.Row, 0);
+            }
+
+            if (this.IsValidColumnMove(cell.Column, cell.Value))
+            {
+                this.MoveColumn(cell.Column, cell.Value);
+                if (this.HasSolution())
+                    return true;
+                this.MoveColumn(cell.Column, 0);
+            }
+
+            return false;
         }
     }
 }
