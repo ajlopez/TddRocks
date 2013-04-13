@@ -32,14 +32,20 @@
 
         public Status Evaluate()
         {
+            int nnotcompleted = 0;
+
             for (int j = 0; j < 4; j++)
             {
                 var result = this.EvaluateFour(0, j, 1, 0);
                 if (result == Status.XWon || result == Status.OWon)
                     return result;
+                if (result == Status.NotCompleted)
+                    nnotcompleted++;
                 result = this.EvaluateFour(j, 0, 0, 1);
                 if (result == Status.XWon || result == Status.OWon)
                     return result;
+                if (result == Status.NotCompleted)
+                    nnotcompleted++;
                 result = this.EvaluateFour(0, 0, 1, 1);
                 if (result == Status.XWon || result == Status.OWon)
                     return result;
@@ -47,6 +53,9 @@
                 if (result == Status.XWon || result == Status.OWon)
                     return result;
             }
+
+            if (nnotcompleted == 0)
+                return Status.Draw;
 
             return Status.NotCompleted;
         }

@@ -129,5 +129,13 @@
 
             Assert.AreEqual(Status.OWon, board.Evaluate());
         }
+
+        [TestMethod]
+        public void FullBoard()
+        {
+            Board board = new Board("XOXTXXOOOXOXXXOO");
+
+            Assert.AreEqual(Status.Draw, board.Evaluate());
+        }
     }
 }
