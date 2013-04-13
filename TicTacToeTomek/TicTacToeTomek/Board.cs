@@ -53,7 +53,7 @@
                     return Status.OWon;
             }
 
-            return Status.Draw;
+            return Status.NotCompleted;
         }
     }
 }

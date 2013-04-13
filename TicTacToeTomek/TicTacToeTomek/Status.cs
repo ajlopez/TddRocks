@@ -9,6 +9,6 @@
     {
         XWon,
         OWon,
-        Draw
+        NotCompleted
     }
 }

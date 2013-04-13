@@ -15,7 +15,7 @@
         {
             Board board = new Board();
 
-            Assert.AreEqual(Status.Draw, board.Evaluate());
+            Assert.AreEqual(Status.NotCompleted, board.Evaluate());
         }
 
         [TestMethod]
