@@ -7,12 +7,13 @@
 
     public class Trove
     {
-        private IList<int> keys = new List<int>();
+        private KeySet keys = new KeySet();
         private IList<Chest> chests = new List<Chest>();
 
         public IList<int> GetSolution()
         {
             var result = new List<int>();
+            var keys = this.keys.Keys.ToList();
 
             foreach (var key in keys)
             {
@@ -22,6 +23,7 @@
                     return new int[] { };
 
                 result.Add(this.chests.IndexOf(chest));
+                this.keys = this.keys.Remove(key);
             }
 
             return result;
@@ -34,7 +36,7 @@
 
         public void AddKey(int key)
         {
-            this.keys.Add(key);
+            this.keys = this.keys.Add(key);
         }
     }
 }
