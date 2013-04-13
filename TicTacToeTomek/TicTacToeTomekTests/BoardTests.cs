@@ -33,5 +33,21 @@
 
             Assert.AreEqual(Status.XWon, board.Evaluate());
         }
+
+        [TestMethod]
+        public void EvaluateFirstRowWithOs()
+        {
+            Board board = new Board("OOOO");
+
+            Assert.AreEqual(Status.OWon, board.Evaluate());
+        }
+
+        [TestMethod]
+        public void EvaluateSecondRowWithOs()
+        {
+            Board board = new Board("....OOOO");
+
+            Assert.AreEqual(Status.OWon, board.Evaluate());
+        }
     }
 }

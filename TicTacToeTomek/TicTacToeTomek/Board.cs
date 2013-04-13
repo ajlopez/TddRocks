@@ -34,13 +34,20 @@
         {
             for (int j = 0; j < 4; j++)
             {
-                int n = 0;
+                int nx = 0;
+                int no = 0;
+
                 for (int k = 0; k < 4; k++)
                     if (this.cells[j, k] == 'X')
-                        n++;
+                        nx++;
+                    else if (this.cells[j, k] == 'O')
+                        no++;
 
-                if (n == 4)
+                if (nx == 4)
                     return Status.XWon;
+
+                if (no == 4)
+                    return Status.OWon;
             }
 
             return Status.Tie;
