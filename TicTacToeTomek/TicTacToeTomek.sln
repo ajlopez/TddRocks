@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeTomek", "TicTacToeTomek\TicTacToeTomek.csproj", "{B8B71490-5D05-41E9-BCF6-3E4AFD100D55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeTomekTests", "TicTacToeTomekTests\TicTacToeTomekTests.csproj", "{006CA7D3-52DF-4A70-BDED-A0503853C144}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BFCCFFF7-309A-4D81-AC2C-CB54DE87D1C9}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		TicTacToeTomek.vsmdi = TicTacToeTomek.vsmdi
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = TicTacToeTomek.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8B71490-5D05-41E9-BCF6-3E4AFD100D55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8B71490-5D05-41E9-BCF6-3E4AFD100D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8B71490-5D05-41E9-BCF6-3E4AFD100D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8B71490-5D05-41E9-BCF6-3E4AFD100D55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{006CA7D3-52DF-4A70-BDED-A0503853C144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006CA7D3-52DF-4A70-BDED-A0503853C144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006CA7D3-52DF-4A70-BDED-A0503853C144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006CA7D3-52DF-4A70-BDED-A0503853C144}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
