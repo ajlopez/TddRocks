@@ -136,6 +136,22 @@
         }
 
         [TestMethod]
+        public void GetMinUnsolved()
+        {
+            Pattern pattern = new Pattern(2, 2);
+
+            pattern.SetRow(0, "1 2");
+            pattern.SetRow(1, "4 3");
+
+            var result = pattern.GetMinUnsolved();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(0, result.Row);
+            Assert.AreEqual(0, result.Column);
+            Assert.AreEqual(1, result.Value);
+        }
+
+        [TestMethod]
         public void GetMaxUnsolvedWithRowMove()
         {
             Pattern pattern = new Pattern(2, 2);
@@ -151,6 +167,24 @@
             Assert.AreEqual(1, result.Row);
             Assert.AreEqual(1, result.Column);
             Assert.AreEqual(3, result.Value);
+        }
+
+        [TestMethod]
+        public void GetMinUnsolvedWithRowMove()
+        {
+            Pattern pattern = new Pattern(2, 2);
+
+            pattern.SetRow(0, "1 2");
+            pattern.SetRow(1, "4 3");
+
+            pattern.MoveRow(0, 1);
+
+            var result = pattern.GetMinUnsolved();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(0, result.Row);
+            Assert.AreEqual(1, result.Column);
+            Assert.AreEqual(2, result.Value);
         }
 
         [TestMethod]
