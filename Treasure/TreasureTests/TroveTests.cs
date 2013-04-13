@@ -90,5 +90,17 @@
             Assert.AreEqual(1, result[1]);
             Assert.AreEqual(2, result[2]);
         }
+
+        [TestMethod]
+        public void CannotOpenOneChestWithoutKey()
+        {
+            Trove trove = new Trove();
+            trove.AddKey(2);
+            trove.AddChest(new Chest(1, new int[] { 1 }));
+
+            var result = trove.GetSolution();
+
+            Assert.IsNull(result);
+        }
     }
 }
