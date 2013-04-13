@@ -54,7 +54,7 @@
                 return false;
 
             for (int k = 0; k < this.width; k++)
-                if (this.cells[nrow, k] > move)
+                if (this.cells[nrow, k] > move && !this.IsSolved(nrow, k))
                     return false;
 
             return true;
@@ -66,7 +66,7 @@
                 return false;
 
             for (int k = 0; k < this.height; k++)
-                if (this.cells[k, ncol] > move)
+                if (this.cells[k, ncol] > move && !this.IsSolved(k, ncol))
                     return false;
 
             return true;
@@ -124,7 +124,7 @@
 
         public bool HasSolution()
         {
-            Cell cell = this.GetMaxUnsolved();
+            Cell cell = this.GetMinUnsolved();
 
             if (cell == null)
                 return true;
