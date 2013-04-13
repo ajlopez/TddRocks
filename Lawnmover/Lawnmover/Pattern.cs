@@ -52,5 +52,14 @@
 
             return true;
         }
+
+        public bool IsValidColumnMove(int ncol, int move)
+        {
+            for (int k = 0; k < this.width; k++)
+                if (this.cells[k, ncol] > move)
+                    return false;
+
+            return true;
+        }
     }
 }
