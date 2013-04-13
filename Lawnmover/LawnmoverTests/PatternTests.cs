@@ -80,5 +80,21 @@
             Assert.IsFalse(pattern.IsValidColumnMove(1, 2));
             Assert.IsFalse(pattern.IsValidColumnMove(1, 1));
         }
+
+        [TestMethod]
+        public void GetMaxUnsolved()
+        {
+            Pattern pattern = new Pattern(2, 2);
+
+            pattern.SetRow(0, "1 2");
+            pattern.SetRow(1, "4 3");
+
+            var result = pattern.GetMaxUnsolved();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Row);
+            Assert.AreEqual(0, result.Column);
+            Assert.AreEqual(4, result.Value);
+        }
     }
 }
