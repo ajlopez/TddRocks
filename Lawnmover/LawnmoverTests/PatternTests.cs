@@ -32,5 +32,19 @@
             Assert.AreEqual(2, pattern.GetCell(1, 0));
             Assert.AreEqual(3, pattern.GetCell(1, 1));
         }
+
+        [TestMethod]
+        public void SetRowsUsingStrings()
+        {
+            Pattern pattern = new Pattern(2, 2);
+
+            pattern.SetRow(0, "1 2");
+            pattern.SetRow(1, "2 3");
+
+            Assert.AreEqual(1, pattern.GetCell(0, 0));
+            Assert.AreEqual(2, pattern.GetCell(0, 1));
+            Assert.AreEqual(2, pattern.GetCell(1, 0));
+            Assert.AreEqual(3, pattern.GetCell(1, 1));
+        }
     }
 }
