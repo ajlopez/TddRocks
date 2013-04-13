@@ -13,17 +13,59 @@
 
         public IList<int> GetSolution()
         {
-            var toopen = this.chests.Where(ch => !ch.Opened).ToList();
-            KeySet keyset = new KeySet();
+            var chest = new Chest(0, this.keys.Keys.ToList());
+            chest.Open();
+            this.chests.Insert(0, chest);
+            var count = this.chests.Count;
+            var result = new int[count];
 
-            foreach (var chest in toopen)
-                keyset = keyset.Add(chest.Keys);
+            int pos = 1;
 
-            var result = this.GetSolution(new int[] { }, toopen, keyset);
-            if (result == null)
-                return null;
+            if (GetSolution(count, pos, result))
+                return result;
 
-            return result.ToList();
+            return null;
+        }
+
+        public bool GetSolution(int count, int pos, int[] result)
+        {
+            for (int k = 1; k < count; k++)
+            {
+                var ch = this.chests[k];
+
+                if (ch.Opened)
+                    continue;
+
+                for (int j = ch.Opener + 1; j < count; j++)
+                {
+                    if (j == k)
+                        continue;
+                    var ch2 = this.chests[j];
+                    if (!ch2.Opened)
+                        continue;
+                    if (!ch2.Keys.Contains(ch.Key))
+                        continue;
+                    ch2.Keys.Remove(ch.Key);
+                    ch.Opener = j;
+                    ch.Open();
+                    result[pos] = k;
+
+                    pos++;
+
+                    if (pos >= count)
+                        return true;
+
+                    if (GetSolution(count, pos, result))
+                        return true;
+
+                    pos--;
+                    ch.Close();
+                    ch2.Keys.Add(ch.Key);
+                    break;
+                }
+            }
+
+            return false;
         }
 
         public IEnumerable<int> GetSolution(IEnumerable<int> opened, IList<Chest> toopen, KeySet keyset)
@@ -38,13 +80,14 @@
                     return null;
             }
 
-            foreach (var chest in toopen.Where(ch => this.keys.Keys.Contains(ch.Key)))
+            foreach (var chest in toopen.Where(ch => ch.Opener == -1 && this.keys.Keys.Contains(ch.Key)))
             {
                 int key = chest.Key;
 
                 var result = new List<int>(opened);
                 result.Add(this.chests.IndexOf(chest));
                 chest.Open();
+                chest.Opener = 0;
 
                 var oldkeys = this.keys;
 
@@ -61,7 +104,6 @@
                     return newresult;
 
                 chest.Close();
-
                 this.keys = oldkeys;
             }
 
@@ -71,6 +113,7 @@
         public void AddChest(Chest chest)
         {
             this.chests.Add(chest);
+            chest.Opener = -1;
             this.availablekeys = this.availablekeys.Add(chest.Keys);
         }
 

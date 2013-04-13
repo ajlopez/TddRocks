@@ -31,8 +31,9 @@
             var result = trove.GetSolution();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(2, result.Count);
             Assert.AreEqual(0, result[0]);
+            Assert.AreEqual(1, result[1]);
         }
 
         [TestMethod]
@@ -46,9 +47,10 @@
             var result = trove.GetSolution();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count);
-            Assert.AreEqual(1, result[0]);
-            Assert.AreEqual(0, result[1]);
+            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual(0, result[0]);
+            Assert.AreEqual(2, result[1]);
+            Assert.AreEqual(1, result[2]);
         }
 
         [TestMethod]
@@ -64,11 +66,12 @@
             var result = trove.GetSolution();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(4, result.Count);
-            Assert.AreEqual(1, result[0]);
-            Assert.AreEqual(0, result[1]);
-            Assert.AreEqual(3, result[2]);
-            Assert.AreEqual(2, result[3]);
+            Assert.AreEqual(5, result.Count);
+            Assert.AreEqual(0, result[0]);
+            Assert.AreEqual(2, result[1]);
+            Assert.AreEqual(1, result[2]);
+            Assert.AreEqual(4, result[3]);
+            Assert.AreEqual(3, result[4]);
         }
 
         [TestMethod]
@@ -85,10 +88,11 @@
             var result = trove.GetSolution();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual(4, result.Count);
             Assert.AreEqual(0, result[0]);
             Assert.AreEqual(1, result[1]);
             Assert.AreEqual(2, result[2]);
+            Assert.AreEqual(3, result[3]);
         }
 
         [TestMethod]
@@ -151,7 +155,6 @@
         }
 
         [TestMethod]
-        [Ignore]
         public void GoogleSmallCaseNine()
         {
             Trove trove = new Trove();

@@ -24,14 +24,16 @@
         public Chest(int key, IList<int> keys)
         {
             this.key = key;
-            this.keys = keys;
+            this.keys = keys.ToList();
         }
 
         public int Key { get { return this.key; } }
 
         public bool Opened { get { return this.opened; } }
 
-        public IEnumerable<int> Keys { get { return this.keys; } }
+        public IList<int> Keys { get { return this.keys; } }
+
+        public int Opener { get; set; }
 
         public void Open()
         {
