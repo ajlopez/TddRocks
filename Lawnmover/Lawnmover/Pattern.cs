@@ -10,12 +10,16 @@
         private int width;
         private int height;
         private int[,] cells;
+        private int[] rowmoves;
+        private int[] columnmoves;
 
         public Pattern(int width, int height)
         {
             this.width = width;
             this.height = height;
             this.cells = new int[width, height];
+            this.rowmoves = new int[height];
+            this.columnmoves = new int[width];
         }
 
         public void SetRow(int nrow, string values)
@@ -62,6 +66,16 @@
             return true;
         }
 
+        public void MoveRow(int nrow, int value)
+        {
+            this.rowmoves[nrow] = value;
+        }
+
+        public void MoveColumn(int ncol, int value)
+        {
+            this.columnmoves[ncol] = value;
+        }
+
         public Cell GetMaxUnsolved()
         {
             Cell result = null;
@@ -70,6 +84,8 @@
                 for (int y = 0; y < height; y++)
                 {
                     int value = this.cells[y, x];
+                    if (this.rowmoves[y] == value || this.columnmoves[x] == value)
+                        continue;
                     if (result == null || result.Value < value)
                         result = new Cell() { Row = y, Column = x, Value = value };
                 }

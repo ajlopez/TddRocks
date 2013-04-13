@@ -96,5 +96,41 @@
             Assert.AreEqual(0, result.Column);
             Assert.AreEqual(4, result.Value);
         }
+
+        [TestMethod]
+        public void GetMaxUnsolvedWithRowMove()
+        {
+            Pattern pattern = new Pattern(2, 2);
+
+            pattern.SetRow(0, "1 2");
+            pattern.SetRow(1, "4 3");
+
+            pattern.MoveRow(1, 4);
+
+            var result = pattern.GetMaxUnsolved();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Row);
+            Assert.AreEqual(1, result.Column);
+            Assert.AreEqual(3, result.Value);
+        }
+
+        [TestMethod]
+        public void GetMaxUnsolvedWithColumnMove()
+        {
+            Pattern pattern = new Pattern(2, 2);
+
+            pattern.SetRow(0, "1 2");
+            pattern.SetRow(1, "4 3");
+
+            pattern.MoveColumn(0, 4);
+
+            var result = pattern.GetMaxUnsolved();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Row);
+            Assert.AreEqual(1, result.Column);
+            Assert.AreEqual(3, result.Value);
+        }
     }
 }
