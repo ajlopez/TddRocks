@@ -29,6 +29,10 @@
             this.SetRow(nrow, ivalues);
         }
 
+        public int Width { get { return this.width; } }
+
+        public int Height { get { return this.height; } }
+
         public void SetRow(int nrow, IList<int> values)
         {
             for (int k = 0; k < width; k++)
@@ -40,8 +44,13 @@
             return this.cells[nrow, ncol];
         }
 
-        public int Width { get { return this.width; } }
+        public bool IsValidRowMove(int nrow, int move)
+        {
+            for (int k = 0; k < this.width; k++)
+                if (this.cells[nrow, k] > move)
+                    return false;
 
-        public int Height { get { return this.height; } }
+            return true;
+        }
     }
 }

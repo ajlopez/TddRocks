@@ -46,5 +46,22 @@
             Assert.AreEqual(2, pattern.GetCell(1, 0));
             Assert.AreEqual(3, pattern.GetCell(1, 1));
         }
+
+        [TestMethod]
+        public void ValidRowMove()
+        {
+            Pattern pattern = new Pattern(2, 2);
+
+            pattern.SetRow(0, "1 2");
+            pattern.SetRow(1, "2 3");
+
+            Assert.IsTrue(pattern.IsValidRowMove(0, 2));
+            Assert.IsFalse(pattern.IsValidRowMove(0, 1));
+            Assert.IsFalse(pattern.IsValidRowMove(0, 0));
+
+            Assert.IsTrue(pattern.IsValidRowMove(1, 3));
+            Assert.IsFalse(pattern.IsValidRowMove(1, 2));
+            Assert.IsFalse(pattern.IsValidRowMove(1, 1));
+        }
     }
 }
