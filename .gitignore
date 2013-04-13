@@ -8,3 +8,4 @@ packages/*
 *.nupkg
 output/*
 TestResults
+*.zip

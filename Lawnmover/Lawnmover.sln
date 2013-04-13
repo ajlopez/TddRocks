@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lawnmover", "Lawnmover\Lawnmover.csproj", "{0B499722-FC7B-4296-B672-3CF9DB034DAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawnmoverTests", "LawnmoverTests\LawnmoverTests.csproj", "{6034BBDA-7FC3-423E-A9BE-B03C446BE974}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{440B7BA7-5A60-45ED-9537-BF78BF7898ED}"
+	ProjectSection(SolutionItems) = preProject
+		Lawnmover.vsmdi = Lawnmover.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Lawnmover.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B499722-FC7B-4296-B672-3CF9DB034DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B499722-FC7B-4296-B672-3CF9DB034DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B499722-FC7B-4296-B672-3CF9DB034DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B499722-FC7B-4296-B672-3CF9DB034DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6034BBDA-7FC3-423E-A9BE-B03C446BE974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6034BBDA-7FC3-423E-A9BE-B03C446BE974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6034BBDA-7FC3-423E-A9BE-B03C446BE974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6034BBDA-7FC3-423E-A9BE-B03C446BE974}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
