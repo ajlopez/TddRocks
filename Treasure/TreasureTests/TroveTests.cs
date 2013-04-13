@@ -18,8 +18,7 @@
 
             var result = trove.GetSolution();
 
-            Assert.IsNotNull(result);
-            Assert.AreEqual(0, result.Count);
+            Assert.IsNull(result);
         }
 
         [TestMethod]

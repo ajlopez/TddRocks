@@ -13,21 +13,45 @@
 
         public IList<int> GetSolution()
         {
-            var result = new List<int>();
-            var keys = this.keys.Keys.ToList();
+            var result = this.GetSolution(new int[] { });
 
-            foreach (var key in keys)
+            if (result == null)
+                return null;
+
+            return result.ToList();
+        }
+
+        public IEnumerable<int> GetSolution(IEnumerable<int> opened)
+        {
+            var toopen = this.chests.Where(ch => !ch.Opened);
+
+            if (toopen.Count() == 0)
+                return opened;
+
+            foreach (var chest in toopen.Where(ch => this.keys.Keys.Contains(ch.Key)))
             {
-                var chest = this.chests.FirstOrDefault(ch => ch.Key == key);
+                int key = chest.Key;
 
-                if (chest == null)
-                    return new int[] { };
-
+                var result = new List<int>(opened);
                 result.Add(this.chests.IndexOf(chest));
+                chest.Open();
+
+                var oldkeys = this.keys;
+
                 this.keys = this.keys.Remove(key);
+                this.keys = this.keys.Add(chest.Keys);
+
+                var newopened = this.GetSolution(result);
+
+                if (newopened != null)
+                    return newopened;
+
+                chest.Close();
+
+                this.keys = oldkeys;
             }
 
-            return result;
+            return null;
         }
 
         public void AddChest(Chest chest)

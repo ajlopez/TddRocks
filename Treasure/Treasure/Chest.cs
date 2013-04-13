@@ -9,6 +9,7 @@
     {
         private int key;
         private IList<int> keys;
+        private bool opened;
 
         public Chest(int key, IList<int> keys)
         {
@@ -18,6 +19,18 @@
 
         public int Key { get { return this.key; } }
 
+        public bool Opened { get { return this.opened; } }
+
         public IEnumerable<int> Keys { get { return this.keys; } }
+
+        public void Open()
+        {
+            this.opened = true;
+        }
+
+        public void Close()
+        {
+            this.opened = false;
+        }
     }
 }
