@@ -25,5 +25,13 @@
 
             Assert.AreEqual(Status.XWon, board.Evaluate());
         }
+
+        [TestMethod]
+        public void EvaluateSecondRowWithXs()
+        {
+            Board board = new Board("....XXXX");
+
+            Assert.AreEqual(Status.XWon, board.Evaluate());
+        }
     }
 }
