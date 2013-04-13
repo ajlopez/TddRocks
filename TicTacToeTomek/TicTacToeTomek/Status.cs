@@ -7,6 +7,7 @@
 
     public enum Status
     {
+        XWon,
         Tie
     }
 }

@@ -17,5 +17,13 @@
 
             Assert.AreEqual(Status.Tie, board.Evaluate());
         }
+
+        [TestMethod]
+        public void EvaluateFirstRowWithXs()
+        {
+            Board board = new Board("XXXX");
+
+            Assert.AreEqual(Status.XWon, board.Evaluate());
+        }
     }
 }
