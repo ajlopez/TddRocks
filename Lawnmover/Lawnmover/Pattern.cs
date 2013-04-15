@@ -82,22 +82,6 @@
             this.columnmoves[ncol] = value;
         }
 
-        public Cell GetMaxUnsolved()
-        {
-            Cell result = null;
-
-            for (int x = 0; x < width; x++)
-                for (int y = 0; y < height; y++)
-                {
-                    if (this.IsSolved(y, x))
-                        continue;
-                    int value = this.cells[y, x];
-                    if (result == null || result.Value < value)
-                        result = new Cell() { Row = y, Column = x, Value = value };
-                }
-
-            return result;
-        }
 
         public Cell GetMinUnsolved()
         {
