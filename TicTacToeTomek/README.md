@@ -3,7 +3,7 @@
 This TDD Kata is the solution to [Problem A - Tic-Tac-Toe-Tomek](https://code.google.com/codejam/contest/2270488/dashboard)
 from [Google Code Jam 2013](https://code.google.com/codejam/contest/static/logo_image1.gif).
 
-Problem
+## Problem
 
 Tic-Tac-Toe-Tomek is a game played on a 4 x 4 square board. The board starts empty, except that a single 'T' symbol may appear in one of the 16 squares. There are two players: X and O. They take turns to make moves, with X starting. In each move a player puts her symbol in one of the empty squares. Player X's symbol is 'X', and player O's symbol is 'O'.
 
@@ -17,11 +17,11 @@ Given a 4 x 4 board description containing 'X', 'O', 'T' and '.' characters (whe
 "Game has not completed" (the game is not over yet)
 If there are empty cells, and the game is not over, you should output "Game has not completed", even if the outcome of the game is inevitable.
 
-Input
+## Input
 
 The first line of the input gives the number of test cases, T. T test cases follow. Each test case consists of 4 lines with 4 characters each, with each character being 'X', 'O', '.' or 'T' (quotes for clarity only). Each test case is followed by an empty line.
 
-Output
+## Output
 
 For each test case, output one line containing "Case #x: y", where x is the case number (starting from 1) and y is one of the statuses given above. Make sure to get the statuses exactly right. When you run your code on the sample input, it should create the sample output exactly, including the "Case #1: ", the capital letter "O" rather than the number "0", and so on.
 
