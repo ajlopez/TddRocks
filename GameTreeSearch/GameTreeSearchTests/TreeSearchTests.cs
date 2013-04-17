@@ -63,5 +63,14 @@
 
             Assert.AreEqual(7, search.FindMaxValue(tree, 2));
         }
+
+        [TestMethod]
+        public void DepthTwoOnTreeWithTwoLevelsOfChildren()
+        {
+            Tree tree = new Tree(5, new Tree[] { new Tree(3, new Tree[] { new Tree(5), new Tree(7) }), new Tree(7, new Tree[] { new Tree(9), new Tree(11) }) });
+            TreeSearch search = new TreeSearch();
+
+            Assert.AreEqual(11, search.FindMaxValue(tree, 2));
+        }
     }
 }
