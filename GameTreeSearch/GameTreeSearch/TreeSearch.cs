@@ -10,7 +10,7 @@
         public int FindMaxValue(Tree tree, int depth)
         {
             if (depth > 0 && tree.ChildNodes.Count() > 0)
-                return this.FindMaxValue(tree.ChildNodes.First(), depth - 1);
+                return tree.ChildNodes.Max(tr => this.FindMaxValue(tr, depth - 1));
 
             return tree.RootValue;
         }
