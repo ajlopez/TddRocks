@@ -45,5 +45,14 @@
 
             Assert.AreEqual(7, search.FindMaxValue(tree, 1));
         }
+
+        [TestMethod]
+        public void DepthZeroOnTreeWithChildren()
+        {
+            Tree tree = new Tree(5, new Tree[] { new Tree(3), new Tree(7) });
+            TreeSearch search = new TreeSearch();
+
+            Assert.AreEqual(5, search.FindMaxValue(tree, 0));
+        }
     }
 }
