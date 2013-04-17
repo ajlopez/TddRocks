@@ -40,7 +40,7 @@
         [TestMethod]
         public void DepthOneOnTreeWithOnlyTwoChildren()
         {
-            Tree tree = new Tree(5, new Tree[] { new Tree(3), new Tree(7) });
+            Tree tree = CreateTree(5, 3, 7);
             TreeSearch search = new TreeSearch();
 
             Assert.AreEqual(7, search.FindMaxValue(tree, 1));
@@ -49,7 +49,7 @@
         [TestMethod]
         public void DepthZeroOnTreeWithChildren()
         {
-            Tree tree = new Tree(5, new Tree[] { new Tree(3), new Tree(7) });
+            Tree tree = CreateTree(5, 3, 7);
             TreeSearch search = new TreeSearch();
 
             Assert.AreEqual(5, search.FindMaxValue(tree, 0));
@@ -58,7 +58,7 @@
         [TestMethod]
         public void DepthTwoOnTreeWithChildren()
         {
-            Tree tree = new Tree(5, new Tree[] { new Tree(3), new Tree(7) });
+            Tree tree = CreateTree(5, 3, 7);
             TreeSearch search = new TreeSearch();
 
             Assert.AreEqual(7, search.FindMaxValue(tree, 2));
@@ -67,7 +67,7 @@
         [TestMethod]
         public void DepthTwoOnTreeWithTwoLevelsOfChildren()
         {
-            Tree tree = new Tree(5, new Tree[] { new Tree(3, new Tree[] { new Tree(5), new Tree(7) }), new Tree(7, new Tree[] { new Tree(9), new Tree(11) }) });
+            Tree tree = CreateTreeNodes(5, CreateTree(3, 5, 7), CreateTree(7, 9, 11));
             TreeSearch search = new TreeSearch();
 
             Assert.AreEqual(11, search.FindMaxValue(tree, 2));
@@ -76,7 +76,7 @@
         [TestMethod]
         public void DepthTwoOnTreeWithOneAndTwoLevelsOfChildren()
         {
-            Tree tree = new Tree(5, new Tree[] { new Tree(3, new Tree[] { new Tree(5), new Tree(9) }), new Tree(7) });
+            Tree tree = CreateTreeNodes(5, CreateTree(3, 5, 9), CreateTree(7));
             TreeSearch search = new TreeSearch();
 
             Assert.AreEqual(9, search.FindMaxValue(tree, 2));
@@ -90,6 +90,11 @@
                 children.Add(new Tree(val));
 
             return new Tree(value, children);
+        }
+
+        private static Tree CreateTreeNodes(int value, params Tree[] nodes)
+        {
+            return new Tree(value, nodes);
         }
     }
 }
