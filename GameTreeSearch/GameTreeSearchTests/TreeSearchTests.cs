@@ -27,5 +27,14 @@
 
             Assert.AreEqual(5, search.FindMaxValue(tree, 1));
         }
+
+        [TestMethod]
+        public void DepthOneOnTreeWithOnlyOneChildren()
+        {
+            Tree tree = new Tree(5, new Tree[] { new Tree(3) });
+            TreeSearch search = new TreeSearch();
+
+            Assert.AreEqual(3, search.FindMaxValue(tree, 1));
+        }
     }
 }
