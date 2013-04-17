@@ -13,7 +13,7 @@
         [TestMethod]
         public void DepthZeroReturnRootNode()
         {
-            Tree tree = new Tree(3);
+            Tree tree = CreateTree(3);
             TreeSearch search = new TreeSearch();
 
             Assert.AreEqual(3, search.FindMaxValue(tree, 0));
@@ -22,7 +22,7 @@
         [TestMethod]
         public void DepthOneReturnRootNodeOnTreeWithoutChildren()
         {
-            Tree tree = new Tree(5);
+            Tree tree = CreateTree(5);
             TreeSearch search = new TreeSearch();
 
             Assert.AreEqual(5, search.FindMaxValue(tree, 1));
@@ -31,7 +31,7 @@
         [TestMethod]
         public void DepthOneOnTreeWithOnlyOneChild()
         {
-            Tree tree = new Tree(5, new Tree[] { new Tree(3) });
+            Tree tree = CreateTree(5, 3);
             TreeSearch search = new TreeSearch();
 
             Assert.AreEqual(3, search.FindMaxValue(tree, 1));
@@ -80,6 +80,16 @@
             TreeSearch search = new TreeSearch();
 
             Assert.AreEqual(9, search.FindMaxValue(tree, 2));
+        }
+
+        private static Tree CreateTree(int value, params int[] values)
+        {
+            IList<Tree> children = new List<Tree>();
+
+            foreach (int val in values)
+                children.Add(new Tree(val));
+
+            return new Tree(value, children);
         }
     }
 }
