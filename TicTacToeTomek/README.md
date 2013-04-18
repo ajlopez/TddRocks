@@ -1,7 +1,7 @@
 # Tic-Tac-Toe-Tomek
 
 This TDD Kata is the solution to [Problem A - Tic-Tac-Toe-Tomek](https://code.google.com/codejam/contest/2270488/dashboard)
-from [Google Code Jam 2013](https://code.google.com/codejam/contest/static/logo_image1.gif).
+from [Google Code Jam 2013](https://code.google.com/codejam).
 
 ## Problem
 
