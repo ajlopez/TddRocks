@@ -35,6 +35,51 @@
             return this.IsSolved(residues);
         }
 
+        public int MovesToApply(int mote, IList<int> values)
+        {
+            int maxcost = values.Count;
+            var result = this.MovesToApply(mote, values, maxcost);
+            if (result < 0)
+                return maxcost;
+            return result;
+        }
+
+        private int MovesToApply(int mote, IList<int> values, int maxcost)
+        {
+            var residues = this.GetResidues(mote, values);
+
+            if (this.IsSolved(residues))
+                return 0;
+
+            if (maxcost <= 0)
+                return -1;
+
+            int toremove = this.NumberToRemove(values, residues);
+            var newvalues = new List<int>(values);
+            newvalues.Remove(toremove);
+            newvalues.Sort();
+
+            int moves1 = this.MovesToApply(mote, newvalues, maxcost - 1);
+
+            int toadd = this.NumberToAdd(mote, values, residues);
+            newvalues = new List<int>(values);
+            newvalues.Add(toadd);
+            newvalues.Sort();
+
+            int moves2 = this.MovesToApply(mote, newvalues, maxcost - 1);
+
+            if (moves1 < 0 && moves2 < 0)
+                return -1;
+
+            if (moves1 < 0)
+                return moves2 + 1;
+
+            if (moves2 < 0)
+                return moves1 + 1;
+
+            return Math.Min(moves1, moves2) + 1;
+        }
+
         public int NumberToRemove(IList<int> values, IList<int> residues)
         {
             int badresidue = residues.First(r => r >= 0);
