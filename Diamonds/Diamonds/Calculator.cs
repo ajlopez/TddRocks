@@ -14,9 +14,14 @@
 
             int l = (Math.Abs(x) + Math.Abs(y)) / 2;
 
+            int enough = this.NeededDiamonds(l + 1);
+
+            if (enough <= n)
+                return 1;
+
             int needed = this.NeededDiamonds(l);
 
-            if (needed >= n)
+            if (needed > n)
                 return 0;
 
             throw new NotImplementedException();

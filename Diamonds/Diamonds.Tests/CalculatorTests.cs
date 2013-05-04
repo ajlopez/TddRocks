@@ -31,6 +31,27 @@ namespace Diamonds.Tests
         }
 
         [TestMethod]
+        public void EnoughDiamonds()
+        {
+            Calculator calculator = new Calculator();
+
+            Assert.AreEqual(1, calculator.Calculate(1, 0, 0));
+            Assert.AreEqual(1, calculator.Calculate(6, -2, 0));
+            Assert.AreEqual(1, calculator.Calculate(6, 0, 2));
+            Assert.AreEqual(1, calculator.Calculate(6, 2, 0));
+        }
+
+        [TestMethod]
+        public void NotEnoughDiamonds()
+        {
+            Calculator calculator = new Calculator();
+
+            Assert.AreEqual(0, calculator.Calculate(0, 0, 0));
+            Assert.AreEqual(0, calculator.Calculate(5, 0, 2));
+            Assert.AreEqual(0, calculator.Calculate(14, 0, 4));
+        }
+
+        [TestMethod]
         public void NeededDiamonds()
         {
             Calculator calculator = new Calculator();
