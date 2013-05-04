@@ -35,9 +35,11 @@
             return this.IsSolved(residues);
         }
 
-        public int NumbersToRemove(IList<int> residues)
+        public int NumberToRemove(IList<int> values, IList<int> residues)
         {
-            return residues.Count(r => r >= 0);
+            int badresidue = residues.First(r => r >= 0);
+            int position = residues.IndexOf(badresidue);
+            return values[position];
         }
 
         public int NumberToAdd(int mote, IList<int> values)

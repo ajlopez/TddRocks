@@ -70,10 +70,8 @@
         {
             Motes motes = new Motes();
 
-            Assert.AreEqual(0, motes.NumbersToRemove(new int[] { -1, -2 }));
-            Assert.AreEqual(1, motes.NumbersToRemove(new int[] { -1, 0 }));
-            Assert.AreEqual(1, motes.NumbersToRemove(new int[] { -1, 1, -1 }));
-            Assert.AreEqual(2, motes.NumbersToRemove(new int[] { 0, 1, -1 }));
+            Assert.AreEqual(2, motes.NumberToRemove(new int[] { 1, 2, 3 }, new int[] { -1, 1, -1 }));
+            Assert.AreEqual(1, motes.NumberToRemove(new int[] { 1, 2, 3 }, new int[] { 0, 1, -1 }));
         }
 
         [TestMethod]
