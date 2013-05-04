@@ -66,7 +66,7 @@
         }
 
         [TestMethod]
-        public void NumbersToRemove()
+        public void NumberToRemove()
         {
             Motes motes = new Motes();
 
@@ -81,9 +81,9 @@
         {
             Motes motes = new Motes();
 
-            Assert.AreEqual(0, motes.NumberToAdd(10, new int[] { 9, 18 }, new int[] { -9, -1 }));
-            Assert.AreEqual(18, motes.NumberToAdd(10, new int[] { 9, 20 }, new int[] { -9, 1 }));
-            Assert.AreEqual(36, motes.NumberToAdd(10, new int[] { 9, 18, 37 }, new int[] { -1, -1, 0 }));
+            Assert.AreEqual(0, motes.NumberToAdd(10, new int[] { 9, 18 }));
+            Assert.AreEqual(18, motes.NumberToAdd(10, new int[] { 9, 20 }));
+            Assert.AreEqual(36, motes.NumberToAdd(10, new int[] { 9, 18, 37 }));
         }
     }
 }

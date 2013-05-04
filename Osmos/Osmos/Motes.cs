@@ -40,7 +40,17 @@
             return residues.Count(r => r >= 0);
         }
 
-        public int NumberToAdd(int mote, IList<int> values, IList<int> residues)
+        public int NumberToAdd(int mote, IList<int> values)
+        {
+            var residues = this.GetResidues(mote, values);
+
+            if (this.IsSolved(residues))
+                return 0;
+
+            return NumberToAdd(mote, values, residues);
+        }
+
+        private int NumberToAdd(int mote, IList<int> values, IList<int> residues)
         {
             int number = mote;
             int count = residues.Count;
