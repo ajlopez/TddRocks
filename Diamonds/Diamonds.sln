@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diamonds", "Diamonds\Diamonds.csproj", "{536D6EC5-4FD8-4BF9-A757-311F5F0471E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diamonds.Tests", "Diamonds.Tests\Diamonds.Tests.csproj", "{324C732E-E733-44B9-AC0A-C4E49148F789}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52E9E9AA-3CC0-405C-B053-7E40B02415C9}"
+	ProjectSection(SolutionItems) = preProject
+		Diamonds.vsmdi = Diamonds.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Diamonds.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{536D6EC5-4FD8-4BF9-A757-311F5F0471E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536D6EC5-4FD8-4BF9-A757-311F5F0471E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536D6EC5-4FD8-4BF9-A757-311F5F0471E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536D6EC5-4FD8-4BF9-A757-311F5F0471E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{324C732E-E733-44B9-AC0A-C4E49148F789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{324C732E-E733-44B9-AC0A-C4E49148F789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{324C732E-E733-44B9-AC0A-C4E49148F789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{324C732E-E733-44B9-AC0A-C4E49148F789}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
