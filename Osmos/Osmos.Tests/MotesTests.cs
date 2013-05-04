@@ -131,5 +131,13 @@
 
             Assert.AreEqual(4, motes.MovesToApply(1, new int[] { 1, 1, 1, 1 }));
         }
+
+        [TestMethod]
+        public void GoogleSmallSample1()
+        {
+            Motes motes = new Motes();
+
+            Assert.AreEqual(0, motes.MovesToApply(3, new int[] { 1, 2, 4, 5, 6, 7, 8, 9 }));
+        }
     }
 }
