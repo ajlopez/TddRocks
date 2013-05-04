@@ -64,5 +64,26 @@
 
             Assert.IsFalse(motes.CanBeSolved(10, new int[] { 9, 18, 37 }));
         }
+
+        [TestMethod]
+        public void NumbersToRemove()
+        {
+            Motes motes = new Motes();
+
+            Assert.AreEqual(0, motes.NumbersToRemove(new int[] { -1, -2 }));
+            Assert.AreEqual(1, motes.NumbersToRemove(new int[] { -1, 0 }));
+            Assert.AreEqual(1, motes.NumbersToRemove(new int[] { -1, 1, -1 }));
+            Assert.AreEqual(2, motes.NumbersToRemove(new int[] { 0, 1, -1 }));
+        }
+
+        [TestMethod]
+        public void NumberToAdd()
+        {
+            Motes motes = new Motes();
+
+            Assert.AreEqual(0, motes.NumberToAdd(10, new int[] { 9, 18 }, new int[] { -9, -1 }));
+            Assert.AreEqual(18, motes.NumberToAdd(10, new int[] { 9, 20 }, new int[] { -9, 1 }));
+            Assert.AreEqual(36, motes.NumberToAdd(10, new int[] { 9, 18, 37 }, new int[] { -1, -1, 0 }));
+        }
     }
 }
