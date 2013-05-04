@@ -48,5 +48,21 @@
 
             Assert.IsFalse(motes.CanBeSolved(10, new int[] { 9, 19 }));
         }
+
+        [TestMethod]
+        public void ThreeMotesThanCanBeSolved()
+        {
+            Motes motes = new Motes();
+
+            Assert.IsTrue(motes.CanBeSolved(10, new int[] { 9, 18, 36 }));
+        }
+
+        [TestMethod]
+        public void ThreeMotesThanCannotBeSolved()
+        {
+            Motes motes = new Motes();
+
+            Assert.IsFalse(motes.CanBeSolved(10, new int[] { 9, 18, 37 }));
+        }
     }
 }

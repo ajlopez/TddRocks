@@ -9,16 +9,19 @@
     {
         public bool CanBeSolved(int mote, IList<int> values)
         {
-            int count = values.Count;
+            IList<int> residues = new List<int>(values.OrderBy(v => v));
+            int count = residues.Count;
+            int rest = mote;
 
-            for (int k = 0; k < count; k++)
+            for (int j = -1; j < count - 1; j++)
             {
-                if (mote <= values[k])
-                    return false;
-                mote += values[k];
+                for (int k = j + 1; k < count; k++)
+                    residues[k] -= rest;
+
+                rest = values[j + 1];
             }
 
-            return true;
+            return residues.All(v => v < 0);
         }
     }
 }
