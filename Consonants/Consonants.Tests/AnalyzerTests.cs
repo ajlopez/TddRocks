@@ -76,6 +76,27 @@
         }
 
         [TestMethod]
+        public void GetCountRtzLength2()
+        {
+            Analyzer analyzer = new Analyzer();
+            Assert.AreEqual(3, analyzer.Count("rtz", 2));
+        }
+
+        [TestMethod]
+        public void GetCountAbeLength1()
+        {
+            Analyzer analyzer = new Analyzer();
+            Assert.AreEqual(4, analyzer.Count("abe", 1));
+        }
+
+        [TestMethod]
+        public void GetCountQuartzLength2()
+        {
+            Analyzer analyzer = new Analyzer();
+            Assert.AreEqual(9, analyzer.Count("quartz", 2));
+        }
+
+        [TestMethod]
         public void GetCountStringLength3()
         {
             Analyzer analyzer = new Analyzer();

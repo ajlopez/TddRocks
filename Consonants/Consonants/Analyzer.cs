@@ -34,15 +34,19 @@
             var positions = this.GetConsonantPositions(text, length);
             int tlength = text.Length;
 
-            var counter = 0;
+            int counter = 0;
+            int initial = 0;
 
             foreach (int position in positions)
             {
+                int first = position - initial;
                 int rest = tlength - position - length;
-                counter += (position + 1) * (rest + 1);
+                counter += (first + 1) * (rest + 1);
 
-                if (rest > 0 && position > 0)
-                    counter--;
+                //if (rest > 0 && first > 0)
+                //    counter--;
+
+                initial = position + 1;
             }
 
             return counter;
