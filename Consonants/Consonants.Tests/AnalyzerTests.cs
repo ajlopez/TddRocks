@@ -42,5 +42,30 @@
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(1, result[0]);
         }
+
+        [TestMethod]
+        public void GetConsonantStringsLength2Sample2()
+        {
+            Analyzer analyzer = new Analyzer();
+            var result = analyzer.GetConsonantPositions("abcd", 2);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count);
+            Assert.AreEqual(1, result[0]);
+            Assert.AreEqual(2, result[1]);
+        }
+
+        [TestMethod]
+        public void GetConsonantStringsLength2Sample3()
+        {
+            Analyzer analyzer = new Analyzer();
+            var result = analyzer.GetConsonantPositions("bcdf", 2);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual(0, result[0]);
+            Assert.AreEqual(1, result[1]);
+            Assert.AreEqual(2, result[2]);
+        }
     }
 }
