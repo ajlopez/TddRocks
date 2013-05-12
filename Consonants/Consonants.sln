@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consonants", "Consonants\Consonants.csproj", "{60EBAA1E-943B-4825-A627-6C56DF7EC9C5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{05679FA0-4B81-4DAD-9CA9-BC60C4340149}"
+	ProjectSection(SolutionItems) = preProject
+		Consonants.vsmdi = Consonants.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consonants.Tests", "Consonants.Tests\Consonants.Tests.csproj", "{DD8D01F1-181C-416F-9F8A-BBD6E1498FD3}"
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Consonants.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -13,6 +24,10 @@ Global
 		{60EBAA1E-943B-4825-A627-6C56DF7EC9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60EBAA1E-943B-4825-A627-6C56DF7EC9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60EBAA1E-943B-4825-A627-6C56DF7EC9C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD8D01F1-181C-416F-9F8A-BBD6E1498FD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD8D01F1-181C-416F-9F8A-BBD6E1498FD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD8D01F1-181C-416F-9F8A-BBD6E1498FD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD8D01F1-181C-416F-9F8A-BBD6E1498FD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
