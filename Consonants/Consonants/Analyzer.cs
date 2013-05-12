@@ -32,12 +32,17 @@
         public int Count(string text, int length)
         {
             var positions = this.GetConsonantPositions(text, length);
+            int tlength = text.Length;
 
             var counter = 0;
 
             foreach (int position in positions)
             {
-                counter += position + 1;
+                int rest = tlength - position - length;
+                counter += (position + 1) * (rest + 1);
+
+                if (rest > 0 && position > 0)
+                    counter--;
             }
 
             return counter;

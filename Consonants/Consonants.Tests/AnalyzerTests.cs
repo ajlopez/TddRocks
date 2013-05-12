@@ -74,5 +74,12 @@
             Analyzer analyzer = new Analyzer();
             Assert.AreEqual(4, analyzer.Count("quartz", 3));
         }
+
+        [TestMethod]
+        public void GetCountStringLength3()
+        {
+            Analyzer analyzer = new Analyzer();
+            Assert.AreEqual(4, analyzer.Count("string", 3));
+        }
     }
 }
