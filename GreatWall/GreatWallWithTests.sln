@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatWall", "GreatWall\GreatWall.csproj", "{B3042FB3-6A56-414D-8459-F4FBF0890BA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatWall.Tests", "GreatWall.Tests\GreatWall.Tests.csproj", "{63A98C93-BCD9-4F82-8930-600F431BDFBA}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4BC7C9A5-5E08-4313-91D8-959DB865C660}"
 	ProjectSection(SolutionItems) = preProject
 		GreatWall.vsmdi = GreatWall.vsmdi
@@ -24,6 +26,10 @@ Global
 		{B3042FB3-6A56-414D-8459-F4FBF0890BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3042FB3-6A56-414D-8459-F4FBF0890BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3042FB3-6A56-414D-8459-F4FBF0890BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63A98C93-BCD9-4F82-8930-600F431BDFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63A98C93-BCD9-4F82-8930-600F431BDFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63A98C93-BCD9-4F82-8930-600F431BDFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63A98C93-BCD9-4F82-8930-600F431BDFBA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{054A37C3-8438-4E32-BE8A-448AC2A7264F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{054A37C3-8438-4E32-BE8A-448AC2A7264F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{054A37C3-8438-4E32-BE8A-448AC2A7264F}.Release|Any CPU.ActiveCfg = Release|Any CPU
