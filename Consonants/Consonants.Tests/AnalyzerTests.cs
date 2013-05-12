@@ -67,5 +67,12 @@
             Assert.AreEqual(1, result[1]);
             Assert.AreEqual(2, result[2]);
         }
+
+        [TestMethod]
+        public void GetCountQuartzLength3()
+        {
+            Analyzer analyzer = new Analyzer();
+            Assert.AreEqual(4, analyzer.Count("quartz", 3));
+        }
     }
 }

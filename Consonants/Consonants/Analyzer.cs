@@ -28,5 +28,19 @@
 
             return positions;
         }
+
+        public int Count(string text, int length)
+        {
+            var positions = this.GetConsonantPositions(text, length);
+
+            var counter = 0;
+
+            foreach (int position in positions)
+            {
+                counter += position + 1;
+            }
+
+            return counter;
+        }
     }
 }
