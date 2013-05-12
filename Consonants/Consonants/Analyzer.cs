@@ -13,18 +13,28 @@
         {
             IList<int> positions = new List<int>();
             int l = text.Length;
+            Console.WriteLine("Text length " + l);
+            int k;
 
-            for (int k = 0; k + length <= l; k++)
+            for (k = 0; k < l; k++)
+                if (!vowels.Contains(text[k]))
+                    break;
+
+            Console.WriteLine("First consonant at " + k);
+
+            for (; k + length <= l; k++)
             {
                 int counter = 0;
 
-                for (int j = 0; j < length; j++)
+                for (int j = 0; counter == j && j < length; j++)
                     if (!vowels.Contains(text[k + j]))
                         counter++;
 
                 if (counter == length)
                     positions.Add(k);
             }
+
+            Console.WriteLine("Count of Positions " + positions.Count);
 
             return positions;
         }

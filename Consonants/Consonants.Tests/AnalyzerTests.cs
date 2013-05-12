@@ -118,6 +118,13 @@
         }
 
         [TestMethod]
+        public void GetCountAaaaLength3()
+        {
+            Analyzer analyzer = new Analyzer();
+            Assert.AreEqual(0, analyzer.Count("aaaa", 3));
+        }
+
+        [TestMethod]
         public void GetCountTsetseLength2()
         {
             Analyzer analyzer = new Analyzer();
