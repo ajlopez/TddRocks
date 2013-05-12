@@ -102,5 +102,26 @@
             Analyzer analyzer = new Analyzer();
             Assert.AreEqual(4, analyzer.Count("string", 3));
         }
+
+        [TestMethod]
+        public void GetCountStraightLength3()
+        {
+            Analyzer analyzer = new Analyzer();
+            Assert.AreEqual(11, analyzer.Count("straight", 3));
+        }
+
+        [TestMethod]
+        public void GetCountGcjLength2()
+        {
+            Analyzer analyzer = new Analyzer();
+            Assert.AreEqual(3, analyzer.Count("gcj", 2));
+        }
+
+        [TestMethod]
+        public void GetCountTsetseLength2()
+        {
+            Analyzer analyzer = new Analyzer();
+            Assert.AreEqual(11, analyzer.Count("tsetse", 2));
+        }
     }
 }
