@@ -29,7 +29,7 @@
         {
             bool result = false;
 
-            for (int k = from; k <= to; k++)
+            for (int k = from; k < to; k++)
                 if (!this.state.ContainsKey(k) || this.state[k] < height)
                 {
                     if (!this.newstate.ContainsKey(k) || this.newstate[k] < height)

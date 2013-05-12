@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attacks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tribe.cs" />
     <Compile Include="Wall.cs" />

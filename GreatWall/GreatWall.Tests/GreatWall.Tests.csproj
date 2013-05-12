@@ -38,6 +38,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttacksTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TribeTests.cs" />
     <Compile Include="WallTests.cs" />
