@@ -37,6 +37,16 @@
         }
 
         [TestMethod]
+        public void AttackInitialWallTwoDaysDifferentPlaces()
+        {
+            Wall wall = new Wall();
+            wall.NewDay();
+            Assert.IsTrue(wall.Attack(10, 12, 6));
+            wall.NewDay();
+            Assert.IsTrue(wall.Attack(11, 13, 6));
+        }
+
+        [TestMethod]
         public void AttackInitialThousandDays()
         {
             Wall wall = new Wall();

@@ -7,37 +7,55 @@
 
     public class Wall
     {
-        private IDictionary<int, int> state = new Dictionary<int, int>();
-        private IDictionary<int, int> newstate;
+        private IList<Interval> state = new List<Interval>();
+        private IList<Interval> newstate;
 
         public void NewDay()
         {
             if (this.newstate != null)
                 this.EndOfDay();
 
-            this.newstate = new Dictionary<int, int>();
+            this.newstate = new List<Interval>();
         }
 
         public void EndOfDay()
         {
-            foreach (int key in this.newstate.Keys)
-                if (!this.state.ContainsKey(key) || this.state[key] < this.newstate[key])
-                    this.state[key] = this.newstate[key];
+            this.state = this.state.Union(this.newstate).ToList();
         }
 
-        public bool Attack(int from, int to, int height)
+        public bool Attack(int from, int to, int strength)
         {
-            bool result = false;
-
             for (int k = from; k < to; k++)
-                if (!this.state.ContainsKey(k) || this.state[k] < height)
+                if (this.state.All(i => i.Wins(k, strength)))
                 {
-                    if (!this.newstate.ContainsKey(k) || this.newstate[k] < height)
-                        this.newstate[k] = height;
-                    result = true;
+                    this.newstate.Add(new Interval(from, to, strength));
+                    return true;
                 }
 
-            return result;
+            return false;
+        }
+
+        private class Interval
+        {
+            private int from;
+            private int to;
+            private int height;
+
+            public Interval(int from, int to, int height)
+            {
+                this.from = from;
+                this.to = to;
+                this.height = height;
+            }
+
+            public bool Wins(int position, int strenght)
+            {
+                if (this.to <= position)
+                    return true;
+                if (this.from > position)
+                    return true;
+                return this.height < strenght;
+            }
         }
     }
 }
