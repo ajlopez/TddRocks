@@ -31,7 +31,7 @@ The first line of the input gives the number of test cases, **T**. **T** test ca
 
 ## Output
 
-For each test case, output one line containing "Case #**x**: **y**", where **x** is the case number (starting from 1) and **y** is the maximum number of black rings that Maria can draw.
+For each test case, output one line containing "Case **#x**: **y**", where **x** is the case number (starting from 1) and **y** is the maximum number of black rings that Maria can draw.
 
 ## Sample
 
