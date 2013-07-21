@@ -18,6 +18,22 @@
             this.values = new bool[width, height];
         }
 
+        public Matrix(params string[] rows)
+        {
+            this.width = rows.Select(row => row.Length).Max();
+            this.height = rows.Length;
+            this.values = new bool[width, height];
+
+            for (int y = 0; y < rows.Length; y++)
+            {
+                string row = rows[y];
+
+                for (int x = 0; x < row.Length; x++)
+                    if (row[x] == '1')
+                        this.Set(x, y, true);
+            }
+        }
+
         public int Width { get { return this.width; } }
 
         public int Height { get { return this.height; } }

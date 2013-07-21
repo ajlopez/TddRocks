@@ -38,5 +38,21 @@
                     else
                         Assert.IsFalse(matrix.Get(x, y));
         }
+
+        [TestMethod]
+        public void CreateMatrixUsingStrings()
+        {
+            Matrix matrix = new Matrix("1000", "0100", "0010", "0001");
+
+            Assert.AreEqual(4, matrix.Width);
+            Assert.AreEqual(4, matrix.Height);
+
+            for (int x = 0; x < 4; x++)
+                for (int y = 0; y < 4; y++)
+                    if (x == y)
+                        Assert.IsTrue(matrix.Get(x, y));
+                    else
+                        Assert.IsFalse(matrix.Get(x, y));
+        }
     }
 }
