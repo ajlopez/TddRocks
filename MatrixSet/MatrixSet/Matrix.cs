@@ -62,10 +62,41 @@
 
             for (int x = 0; x < this.width; x++)
                 for (int y = 0; y < this.height; y++)
-                    if (this.cells[x, y].Value)
-                        result.Add(new List<Cell>() { this.cells[x, y] });
+                {
+                    var set = this.GetGreatestSetFrom(x, y);
+
+                    if (set == null)
+                        continue;
+
+                    if (result.Count == 0) 
+                    {
+                        result.Add(set);
+                        continue;
+                    }
+
+                    if (set.Count > result[0].Count) 
+                    {
+                        result = new List<IList<Cell>>() { set };
+                        continue;
+                    }
+
+                    if (set.Count == result[0].Count)
+                        result.Add(set);
+                }
 
             return result;
+        }
+
+        private IList<Cell> GetGreatestSetFrom(int x, int y)
+        {
+            var cell = this.cells[x, y];
+
+            if (!cell.Value)
+                return null;
+
+            var list = new List<Cell>() { cell };
+
+            return list;
         }
     }
 }
