@@ -80,5 +80,19 @@
             Assert.AreEqual(0, result[0][0].X);
             Assert.AreEqual(0, result[0][0].Y);
         }
+
+        [TestMethod]
+        public void GetGreatestSetsInDiagonalMatrix()
+        {
+            Matrix matrix = new Matrix("1000", "0100", "0010", "0001");
+
+            var result = matrix.GetGreatestSets();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(4, result.Count);
+            Assert.IsTrue(result.All(l => l.Count == 1));
+            Assert.IsTrue(result.All(l => l[0].X == l[0].Y));
+            Assert.IsTrue(result.All(l => l.All(c => c.Value)));
+        }
     }
 }
