@@ -105,6 +105,14 @@
                     greatest = result;
             }
 
+            for (int y2 = y + 1; y2 < this.height; y2++)
+            {
+                var result = ExpandSet(set, x, y, x, y2);
+
+                if (result != null && result.Count > greatest.Count)
+                    greatest = result;
+            }
+
             return greatest;
         }
 
@@ -119,9 +127,18 @@
             newset.Add(cell);
             IList<Cell> greatest = newset;
 
-            for (int newx = x + 1; newx < this.width; newx++)
+            if (top == y)
+                for (int newx = x + 1; newx < this.width; newx++)
+                {
+                    var newset2 = this.ExpandSet(newset, left, top, newx, y);
+
+                    if (newset2 != null && newset2.Count > greatest.Count)
+                        greatest = newset2;
+                }
+
+            for (int newy = y + 1; newy < this.height; newy++)
             {
-                var newset2 = this.ExpandSet(newset, left, top, newx, y);
+                var newset2 = this.ExpandSet(newset, left, top, x, newy);
 
                 if (newset2 != null && newset2.Count > greatest.Count)
                     greatest = newset2;

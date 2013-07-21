@@ -110,5 +110,21 @@
             Assert.IsTrue(result[0][1].X == 1);
             Assert.IsTrue(result[0][2].X == 2);
         }
+
+        [TestMethod]
+        public void GetGreatestSetInFirstColumn()
+        {
+            Matrix matrix = new Matrix("1000", "1000", "1000");
+
+            var result = matrix.GetGreatestSets();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(3, result[0].Count);
+            Assert.IsTrue(result[0].All(c => c.X == 0));
+            Assert.IsTrue(result[0][0].Y == 0);
+            Assert.IsTrue(result[0][1].Y == 1);
+            Assert.IsTrue(result[0][2].Y == 2);
+        }
     }
 }
