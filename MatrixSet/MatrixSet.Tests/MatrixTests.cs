@@ -65,5 +65,20 @@
             Assert.IsNotNull(result);
             Assert.AreEqual(0, result.Count);
         }
+
+        [TestMethod]
+        public void GetGreatestSetsInMatrixWithOneTrue()
+        {
+            Matrix matrix = new Matrix(3, 4);
+            matrix.Set(0, 0, true);
+
+            var result = matrix.GetGreatestSets();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(1, result[0].Count);
+            Assert.AreEqual(0, result[0][0].X);
+            Assert.AreEqual(0, result[0][0].Y);
+        }
     }
 }

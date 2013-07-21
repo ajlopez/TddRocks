@@ -58,7 +58,14 @@
 
         public IList<IList<Cell>> GetGreatestSets()
         {
-            return new List<IList<Cell>>();
+            var result = new List<IList<Cell>>();
+
+            for (int x = 0; x < this.width; x++)
+                for (int y = 0; y < this.height; y++)
+                    if (this.cells[x, y].Value)
+                        result.Add(new List<Cell>() { this.cells[x, y] });
+
+            return result;
         }
     }
 }
