@@ -55,5 +55,10 @@
         {
             this.cells[x, y].Value = value;
         }
+
+        public IList<IList<Cell>> GetGreatestSets()
+        {
+            return new List<IList<Cell>>();
+        }
     }
 }

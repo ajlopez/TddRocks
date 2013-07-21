@@ -54,5 +54,16 @@
                     else
                         Assert.IsFalse(matrix.Get(x, y));
         }
+
+        [TestMethod]
+        public void GetGreatestSetsInEmptyMatrix()
+        {
+            Matrix matrix = new Matrix(3, 4);
+
+            var result = matrix.GetGreatestSets();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(0, result.Count);
+        }
     }
 }
