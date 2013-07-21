@@ -126,5 +126,67 @@
             Assert.IsTrue(result[0][1].Y == 1);
             Assert.IsTrue(result[0][2].Y == 2);
         }
+
+        [TestMethod]
+        public void GetSquareSetSizeFour()
+        {
+            Matrix matrix = new Matrix("1100", "1100", "1000");
+
+            var result = matrix.GetGreatestSets();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(4, result[0].Count);
+            Assert.IsTrue(result[0][0].X == 0);
+            Assert.IsTrue(result[0][0].Y == 0);
+            Assert.IsTrue(result[0][1].X == 1);
+            Assert.IsTrue(result[0][1].Y == 0);
+            Assert.IsTrue(result[0][2].X == 1);
+            Assert.IsTrue(result[0][2].Y == 1);
+            Assert.IsTrue(result[0][3].X == 0);
+            Assert.IsTrue(result[0][3].Y == 1);
+        }
+
+        [TestMethod]
+        public void GetRectangularSetSizeSix()
+        {
+            Matrix matrix = new Matrix("1100", "1100", "1100");
+
+            var result = matrix.GetGreatestSets();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(6, result[0].Count);
+            Assert.IsTrue(result[0].All(c => c.X >= 0 && c.X <= 1));
+            Assert.IsTrue(result[0].All(c => c.Y >= 0 && c.Y <= 2));
+        }
+
+        [TestMethod]
+        public void GetHorizontalRectangularSetSizeSix()
+        {
+            Matrix matrix = new Matrix("1110", "1110", "1100");
+
+            var result = matrix.GetGreatestSets();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(6, result[0].Count);
+            Assert.IsTrue(result[0].All(c => c.X >= 0 && c.X <= 2));
+            Assert.IsTrue(result[0].All(c => c.Y >= 0 && c.Y <= 1));
+        }
+
+        [TestMethod]
+        public void GetSpareSquareSetSizeFour()
+        {
+            Matrix matrix = new Matrix("0101", "0000", "0101");
+
+            var result = matrix.GetGreatestSets();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(4, result[0].Count);
+            Assert.IsTrue(result[0].All(c => c.X == 1 || c.X == 3));
+            Assert.IsTrue(result[0].All(c => c.Y == 0 || c.Y == 2));
+        }
     }
 }

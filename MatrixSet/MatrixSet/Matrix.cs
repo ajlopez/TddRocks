@@ -125,6 +125,18 @@
 
             var newset = new List<Cell>(set);
             newset.Add(cell);
+
+            if (top < y)
+                foreach (var topcell in set.Where(c => c.Y == top && c.X < x))
+                {
+                    var newcell = this.cells[topcell.X, y];
+
+                    if (!newcell.Value)
+                        return null;
+
+                    newset.Add(newcell);
+                }
+
             IList<Cell> greatest = newset;
 
             if (top == y)
