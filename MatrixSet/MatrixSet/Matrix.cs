@@ -9,20 +9,28 @@
     {
         private int width;
         private int height;
-        private bool[,] values;
+        private Cell[,] cells;
 
         public Matrix(int width, int height)
         {
             this.width = width;
             this.height = height;
-            this.values = new bool[width, height];
+            this.cells = new Cell[width, height];
+
+            for (int x = 0; x < width; x++)
+                for (int y = 0; y < height; y++)
+                    this.cells[x, y] = new Cell(x, y);
         }
 
         public Matrix(params string[] rows)
         {
             this.width = rows.Select(row => row.Length).Max();
             this.height = rows.Length;
-            this.values = new bool[width, height];
+            this.cells = new Cell[width, height];
+
+            for (int x = 0; x < width; x++)
+                for (int y = 0; y < height; y++)
+                    this.cells[x, y] = new Cell(x, y);
 
             for (int y = 0; y < rows.Length; y++)
             {
@@ -30,7 +38,7 @@
 
                 for (int x = 0; x < row.Length; x++)
                     if (row[x] == '1')
-                        this.Set(x, y, true);
+                        this.cells[x,y].Value = true;
             }
         }
 
@@ -40,12 +48,12 @@
 
         public bool Get(int x, int y)
         {
-            return this.values[x, y];
+            return this.cells[x, y].Value;
         }
 
         public void Set(int x, int y, bool value)
         {
-            this.values[x, y] = value;
+            this.cells[x, y].Value = value;
         }
     }
 }

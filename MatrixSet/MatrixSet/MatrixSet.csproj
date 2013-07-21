@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cell.cs" />
     <Compile Include="Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
