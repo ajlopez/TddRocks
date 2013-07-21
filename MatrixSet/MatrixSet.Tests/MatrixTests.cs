@@ -188,5 +188,17 @@
             Assert.IsTrue(result[0].All(c => c.X == 1 || c.X == 3));
             Assert.IsTrue(result[0].All(c => c.Y == 0 || c.Y == 2));
         }
+
+        [TestMethod]
+        public void GetTwoSpareSquareSetSizeFour()
+        {
+            Matrix matrix = new Matrix("0101", "1010", "0101", "1010");
+
+            var result = matrix.GetGreatestSets();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count);
+            Assert.IsTrue(result.All(l => l.Count == 4));
+        }
     }
 }
