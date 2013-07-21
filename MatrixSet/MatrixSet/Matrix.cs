@@ -94,9 +94,40 @@
             if (!cell.Value)
                 return null;
 
-            var list = new List<Cell>() { cell };
+            var set = new List<Cell>() { cell };
+            IList<Cell> greatest = set;
 
-            return list;
+            for (int x2 = x + 1; x2 < this.width; x2++)
+            {
+                var result = ExpandSet(set, x, y, x2, y);
+
+                if (result != null && result.Count > greatest.Count)
+                    greatest = result;
+            }
+
+            return greatest;
+        }
+
+        private IList<Cell> ExpandSet(IList<Cell> set, int left, int top, int x, int y)
+        {
+            var cell = this.cells[x, y];
+
+            if (!cell.Value)
+                return null;
+
+            var newset = new List<Cell>(set);
+            newset.Add(cell);
+            IList<Cell> greatest = newset;
+
+            for (int newx = x + 1; newx < this.width; newx++)
+            {
+                var newset2 = this.ExpandSet(newset, left, top, newx, y);
+
+                if (newset2 != null && newset2.Count > greatest.Count)
+                    greatest = newset2;
+            }
+
+            return greatest;
         }
     }
 }

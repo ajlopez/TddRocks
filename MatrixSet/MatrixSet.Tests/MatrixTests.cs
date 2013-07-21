@@ -94,5 +94,21 @@
             Assert.IsTrue(result.All(l => l[0].X == l[0].Y));
             Assert.IsTrue(result.All(l => l.All(c => c.Value)));
         }
+
+        [TestMethod]
+        public void GetGreatestSetInFirstRow()
+        {
+            Matrix matrix = new Matrix("1110", "0000", "0000");
+
+            var result = matrix.GetGreatestSets();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(3, result[0].Count);
+            Assert.IsTrue(result[0].All(c => c.Y == 0));
+            Assert.IsTrue(result[0][0].X == 0);
+            Assert.IsTrue(result[0][1].X == 1);
+            Assert.IsTrue(result[0][2].X == 2);
+        }
     }
 }
