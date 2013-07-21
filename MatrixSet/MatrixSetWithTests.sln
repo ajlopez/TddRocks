@@ -3,9 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixSet", "MatrixSet\MatrixSet.csproj", "{9D023ADD-C38B-4903-9F42-D0F33ECFF04F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixSet.Tests", "MatrixSet.Tests\MatrixSet.Tests.csproj", "{7372DEE2-33AF-4A4D-88A8-C7E28280F6BF}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1470F03C-25A8-4248-BAF5-B293CFDA396F}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		MatrixSet.vsmdi = MatrixSet.vsmdi
+	EndProjectSection
 EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = MatrixSet.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -15,6 +24,10 @@ Global
 		{9D023ADD-C38B-4903-9F42-D0F33ECFF04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D023ADD-C38B-4903-9F42-D0F33ECFF04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D023ADD-C38B-4903-9F42-D0F33ECFF04F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7372DEE2-33AF-4A4D-88A8-C7E28280F6BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7372DEE2-33AF-4A4D-88A8-C7E28280F6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7372DEE2-33AF-4A4D-88A8-C7E28280F6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7372DEE2-33AF-4A4D-88A8-C7E28280F6BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

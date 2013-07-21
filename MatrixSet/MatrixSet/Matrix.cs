@@ -26,5 +26,10 @@
         {
             return this.values[x, y];
         }
+
+        public void Set(int x, int y, bool value)
+        {
+            this.values[x, y] = value;
+        }
     }
 }
