@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AD76772A-E55C-4A87-B05B-457E812FE53D}"
+	ProjectSection(SolutionItems) = preProject
+		Consorcios.vsmdi = Consorcios.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consorcios.Web", "Consorcios.Web\Consorcios.Web.csproj", "{D29D6D2B-5FCA-460D-A451-5F6BE29C5366}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consorcios.Web.Tests", "Consorcios.Web.Tests\Consorcios.Web.Tests.csproj", "{F6FF855D-3F85-4447-837D-BB6FB5382644}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Consorcios.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D29D6D2B-5FCA-460D-A451-5F6BE29C5366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D29D6D2B-5FCA-460D-A451-5F6BE29C5366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D29D6D2B-5FCA-460D-A451-5F6BE29C5366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D29D6D2B-5FCA-460D-A451-5F6BE29C5366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6FF855D-3F85-4447-837D-BB6FB5382644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6FF855D-3F85-4447-837D-BB6FB5382644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6FF855D-3F85-4447-837D-BB6FB5382644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6FF855D-3F85-4447-837D-BB6FB5382644}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
