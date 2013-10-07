@@ -7,7 +7,7 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Web.Mvc;
     using Consorcios.Web.Controllers;
-    using Consorcios.Web.Models;
+    using Consorcios.Core;
 
     [TestClass]
     public class ConsorcioControllerTests
@@ -30,10 +30,10 @@
         [TestMethod]
         public void GetOneConsorcios()
         {
-            IList<Consorcio> lista = new List<Consorcio>();
-            lista.Add(new Consorcio() { Nombre = "Consorcio 1" });
+            ConsorcioRepository repositorio = new ConsorcioRepository();
+            repositorio.Add(new Consorcio() { Nombre = "Consorcio 1" });
 
-            ConsorcioController controller = new ConsorcioController(lista);
+            ConsorcioController controller = new ConsorcioController(repositorio);
 
             var result = controller.Index();
 
@@ -48,6 +48,22 @@
 
             Assert.AreEqual(1, consorcios.Count);
             Assert.AreEqual("Consorcio 1", consorcios[0].Nombre);
+        }
+
+        [TestMethod]
+        public void AddConsorcio()
+        {
+            ConsorcioRepository repositorio = new ConsorcioRepository();
+
+            ConsorcioController controller = new ConsorcioController(repositorio);
+
+            controller.Add("Consorcio Nuevo");
+
+            var lista = repositorio.GetList();
+
+            Assert.AreEqual(1, lista.Count);
+            Assert.AreEqual("Consorcio Nuevo", lista[0].Nombre);
+            Assert.AreEqual(1, lista[0].Id);
         }
     }
 }

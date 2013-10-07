@@ -5,25 +5,32 @@
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
-    using Consorcios.Web.Models;
+    using Consorcios.Core;
 
     public class ConsorcioController : Controller
     {
-        private IList<Consorcio> consorcios;
+        private ConsorcioRepository repositorio;
 
         public ConsorcioController()
-            : this(new List<Consorcio>())
+            : this(new ConsorcioRepository())
         {
         }
 
-        public ConsorcioController(IList<Consorcio> consorcios)
+        public ConsorcioController(ConsorcioRepository repositorio)
         {
-            this.consorcios = consorcios;
+            this.repositorio = repositorio;
         }
 
         public ActionResult Index()
         {
-            return View(this.consorcios);
+            return View(repositorio.GetList());
+        }
+
+        [HttpPost]
+        public ActionResult Add(string nombre)
+        {
+            repositorio.Add(new Consorcio() { Nombre = nombre });
+            return View();
         }
     }
 }

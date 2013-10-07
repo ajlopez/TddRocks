@@ -6,11 +6,11 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F6FF855D-3F85-4447-837D-BB6FB5382644}</ProjectGuid>
+    <ProjectGuid>{3CE4CD11-8EFF-40C9-A145-B5DC346334AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Consorcios.Web.Tests</RootNamespace>
-    <AssemblyName>Consorcios.Web.Tests</AssemblyName>
+    <RootNamespace>Consorcios.Core.Tests</RootNamespace>
+    <AssemblyName>Consorcios.Core.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -38,10 +38,6 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies\System.Web.Mvc.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -49,17 +45,13 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\ConsorcioControllerTests.cs" />
+    <Compile Include="ConsorcioRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Consorcios.Core\Consorcios.Core.csproj">
       <Project>{F6C27BA5-6572-43FE-8236-7EEF1E1AE381}</Project>
       <Name>Consorcios.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Consorcios.Web\Consorcios.Web.csproj">
-      <Project>{D29D6D2B-5FCA-460D-A451-5F6BE29C5366}</Project>
-      <Name>Consorcios.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
