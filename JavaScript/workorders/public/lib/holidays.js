@@ -1,0 +1,1 @@
+var holidays = (function() {var items = [];function addHoliday(holiday, remote) {    items.push({ DayName: holiday, Remote: remote });}function getHolidays() {    return items.slice();}return {    addHoliday: addHoliday,    getHolidays: getHolidays};})();if (typeof module !== 'undefined' && module && module.exports)	module.exports = holidays;

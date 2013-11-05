@@ -1,0 +1,1 @@
+exports.counter = 0;exports['one function'] = function (test) {    test.ok(1);    exports.counter++;};

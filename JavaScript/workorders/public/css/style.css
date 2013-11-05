@@ -1,0 +1,107 @@
+
+body {
+	background-color: rgb(255, 255, 255);
+	color: rgb(51, 51, 51);
+	font-family: 'Segoe UI', Verdana, Helvetica, sans-serif;
+	font-size: 16px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+h1 {
+	color: rgb(68, 68, 68);
+	font-family: 'Segoe UI Light';
+	font-size: 28px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+    height: 38px;
+}
+
+h2 {
+	color: rgb(68, 68, 68);
+	font-family: 'Segoe UI Light';
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+    height: 38px;
+    vertical-align: bottom;
+}
+
+table {
+    background-color: rgb(200, 200, 200);
+}
+
+td {
+    background-color: white;
+}
+
+th {
+	background-color: rgb(238, 238, 238);
+	font-family: 'Segoe UI Semibold';
+	font-size: 14px;
+	padding-bottom: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 0px;
+	height: 22px;
+	font-weight: 300;
+}
+
+td {
+    padding-left: 2px;
+    padding-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 136, 204);
+}
+
+.legend {
+	font-family: 'Segoe UI Semibold';
+}
+
+.hours {
+    background-color: rgb(13, 53, 74);
+    color: white;
+    padding-right: 0px;
+    text-align: center;
+}
+
+.overridenhours {
+    background-color: rgb(26, 106, 148);
+    color: white;
+    padding-right: 0px;
+    text-align: center;
+}
+
+.number {
+    text-align: right;
+    padding-right: 2px;
+}
+
+.inactive {
+	display: none;
+}
+
+.actions a {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.first {
+    clear: both;
+}
+
+.left {
+    float: left;
+    padding-right: 10px;
+}
+
+.center {
+    text-align: center;
+}

@@ -1,0 +1,1 @@
+exports.asynccounter = 0;exports['one function'] = function (test) {    test.async();        setTimeout(function () {        test.ok(1);        exports.asynccounter++;        test.done();    }, 100);};

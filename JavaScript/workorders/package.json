@@ -4,6 +4,7 @@
     "test": "simpleunit test"
   }
 , "dependencies": {
+    "express": "3.x"
   }
 , "devDependencies": {
     "simpleunit": "0.0.2"
