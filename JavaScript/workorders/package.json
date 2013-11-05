@@ -1,0 +1,11 @@
+{ "name": "workorders-sample"
+, "private": true
+, "scripts": {
+    "test": "simpleunit test"
+  }
+, "dependencies": {
+  }
+, "devDependencies": {
+    "simpleunit": "0.0.2"
+  }
+}
