@@ -44,5 +44,12 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("rri", result[1])
         self.assertEqual("to", result[2])
 
+    def test_word_having_uvowel(self):
+        sil = Silabeador()
+        result = sil.parse("curro")
+        self.assertEqual(2, len(result))
+        self.assertEqual("cu", result[0])
+        self.assertEqual("rro", result[1])
+
 if __name__ == '__main__':
     unittest.main()
