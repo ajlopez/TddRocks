@@ -128,13 +128,28 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("san", result[1])
         self.assertEqual("te", result[2])
 
-    def test_ending_sconsonant(self):
+    def test_sconsonant_ending_syllabe(self):
         sil = Silabeador()
         result = sil.parse("desastre")
         self.assertEqual(3, len(result))
         self.assertEqual("de", result[0])
         self.assertEqual("sas", result[1])
         self.assertEqual("tre", result[2])
-                
+
+    def test_yconsonant_ending_word(self):
+        sil = Silabeador()
+        result = sil.parse("Paraguay")
+        self.assertEqual(3, len(result))
+        self.assertEqual("Pa", result[0])
+        self.assertEqual("ra", result[1])
+        self.assertEqual("guay", result[2])
+
+    def test_yconsonant_ending_syllabe(self):
+        sil = Silabeador()
+        result = sil.parse("Huayco")
+        self.assertEqual(2, len(result))
+        self.assertEqual("Huay", result[0])
+        self.assertEqual("co", result[1])
+        
 if __name__ == '__main__':
     unittest.main()

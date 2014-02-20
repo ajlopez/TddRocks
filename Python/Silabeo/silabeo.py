@@ -7,7 +7,7 @@ class Silabeador:
         
         for k in range(len(text)):
             letter = text[k]
-            if is_vowel(letter):
+            if is_vowel(letter) or is_extended_vowel(letter, text, k):
                 if len(syllabe) == 0 and is_diphthong(lastsyllabe, letter):
                     result[len(result) - 1] += letter
                     continue
@@ -31,6 +31,20 @@ class Silabeador:
 def is_vowel(letter):
     return letter in "aeiouáéíóú"
 
+def is_extended_vowel(letter, text, position):
+    if not letter in "yY":
+        return False
+    
+    if position == len(text) - 1:
+        return True
+        
+    nextletter = text[position + 1]
+    
+    if is_vowel(nextletter):
+        return False
+        
+    return True
+    
 def is_open_vowel(letter):
     return letter in "aeoáéóíú"
 
