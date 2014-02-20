@@ -10,7 +10,7 @@ class Silabeador:
                 syllabe += letter
                 result.append(syllabe)
                 syllabe = ""
-            elif letter == "r" and not use_next_letter(text, k + 1, letter):
+            elif is_ending_consonant(letter) and not use_next_letter(text, k + 1, letter):
                 result[len(result) - 1] += letter
             else:
                 syllabe += letter
@@ -22,6 +22,9 @@ class Silabeador:
         
 def is_vowel(letter):
     return letter in "aeiou"
+
+def is_ending_consonant(letter):
+    return letter in "rl"
 
 def use_next_letter(text, position, letter):
     if position >= len(text):

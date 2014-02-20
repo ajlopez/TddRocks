@@ -67,5 +67,12 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("la", result[1])
         self.assertEqual("bar", result[2])
 
+    def test_word_having_syllabe_ending_with_lconsonant(self):
+        sil = Silabeador()
+        result = sil.parse("alto")
+        self.assertEqual(2, len(result))
+        self.assertEqual("al", result[0])
+        self.assertEqual("to", result[1])
+
 if __name__ == '__main__':
     unittest.main()
