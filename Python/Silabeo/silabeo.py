@@ -20,4 +20,4 @@ class Silabeador:
         
 
 def is_vowel(letter):
-    return letter in "aeo"
+    return letter in "aeio"

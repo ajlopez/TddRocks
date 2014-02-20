@@ -36,5 +36,13 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("ca", result[0])
         self.assertEqual("rro", result[1])
 
+    def test_word_having_ivowel(self):
+        sil = Silabeador()
+        result = sil.parse("carrito")
+        self.assertEqual(3, len(result))
+        self.assertEqual("ca", result[0])
+        self.assertEqual("rri", result[1])
+        self.assertEqual("to", result[2])
+
 if __name__ == '__main__':
     unittest.main()
