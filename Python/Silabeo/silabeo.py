@@ -8,10 +8,10 @@ class Silabeador:
             letter = text[k]
             if is_vowel(letter):
                 syllabe += letter
+                result.append(syllabe)
+                syllabe = ""
             else:
-                if len(syllabe) > 0:
-                    result.append(syllabe)
-                syllabe = letter
+                syllabe += letter
                 
         if len(syllabe) > 0:
             result.append(syllabe)
@@ -20,4 +20,4 @@ class Silabeador:
         
 
 def is_vowel(letter):
-    return letter in "ae"
+    return letter in "aeo"
