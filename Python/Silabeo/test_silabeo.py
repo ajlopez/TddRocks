@@ -74,5 +74,13 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("al", result[0])
         self.assertEqual("to", result[1])
 
+    def test_dyphthong(self):
+        sil = Silabeador()
+        result = sil.parse("paisaje")
+        self.assertEqual(3, len(result))
+        self.assertEqual("pai", result[0])
+        self.assertEqual("sa", result[1])
+        self.assertEqual("je", result[2])
+
 if __name__ == '__main__':
     unittest.main()
