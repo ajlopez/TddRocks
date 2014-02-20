@@ -127,6 +127,14 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("gui", result[0])
         self.assertEqual("san", result[1])
         self.assertEqual("te", result[2])
+
+    def test_ending_sconsonant(self):
+        sil = Silabeador()
+        result = sil.parse("desastre")
+        self.assertEqual(3, len(result))
+        self.assertEqual("de", result[0])
+        self.assertEqual("sas", result[1])
+        self.assertEqual("tre", result[2])
                 
 if __name__ == '__main__':
     unittest.main()
