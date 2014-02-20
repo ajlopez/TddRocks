@@ -2,29 +2,29 @@
 class Silabeador:
     def parse(self, text):
         result = []
-        syllabe = ""
-        lastsyllabe = ""
+        syllable = ""
+        lastsyllable = ""
         
         for k in range(len(text)):
             letter = text[k]
             if is_vowel(letter) or is_extended_vowel(letter, text, k):
-                if len(syllabe) == 0 and is_diphthong(lastsyllabe, letter):
+                if len(syllable) == 0 and is_diphthong(lastsyllable, letter):
                     result[len(result) - 1] += letter
                     continue
                     
-                syllabe += letter
-                result.append(syllabe)
-                lastsyllabe = syllabe
-                syllabe = ""
+                syllable += letter
+                result.append(syllable)
+                lastsyllable = syllable
+                syllable = ""
             elif is_ending_consonant(letter) and not use_next_letter(text, k + 1, letter):
                 result[len(result) - 1] += letter
             elif k == len(text) - 1:
                 result[len(result) - 1] += letter
             else:
-                syllabe += letter
+                syllable += letter
                 
-        if len(syllabe) > 0:
-            result.append(syllabe)
+        if len(syllable) > 0:
+            result.append(syllable)
             
         return result
         
@@ -63,11 +63,11 @@ def use_next_letter(text, position, letter):
     
     return False
 
-def is_diphthong(syllabe, letter):
-    if len(syllabe) == 0:
+def is_diphthong(syllable, letter):
+    if len(syllable) == 0:
         return False
         
-    lastletter = syllabe[-1]
+    lastletter = syllable[-1]
     
     if not is_vowel(lastletter):
         return False

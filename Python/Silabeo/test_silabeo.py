@@ -59,7 +59,7 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("la", result[1])
         self.assertEqual("ba", result[2])
 
-    def test_word_having_syllabe_ending_with_rconsonant(self):
+    def test_word_having_syllable_ending_with_rconsonant(self):
         sil = Silabeador()
         result = sil.parse("alabar")
         self.assertEqual(3, len(result))
@@ -67,7 +67,7 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("la", result[1])
         self.assertEqual("bar", result[2])
 
-    def test_word_having_syllabe_ending_with_lconsonant(self):
+    def test_word_having_syllable_ending_with_lconsonant(self):
         sil = Silabeador()
         result = sil.parse("alto")
         self.assertEqual(2, len(result))
@@ -128,7 +128,7 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("san", result[1])
         self.assertEqual("te", result[2])
 
-    def test_sconsonant_ending_syllabe(self):
+    def test_sconsonant_ending_syllable(self):
         sil = Silabeador()
         result = sil.parse("desastre")
         self.assertEqual(3, len(result))
@@ -144,7 +144,7 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("ra", result[1])
         self.assertEqual("guay", result[2])
 
-    def test_yconsonant_ending_syllabe(self):
+    def test_yconsonant_ending_syllable(self):
         sil = Silabeador()
         result = sil.parse("Huayco")
         self.assertEqual(2, len(result))
