@@ -29,6 +29,9 @@ class Silabeador:
 def is_vowel(letter):
     return letter in "aeiou"
 
+def is_open_vowel(letter):
+    return letter in "aeo"
+
 def is_ending_consonant(letter):
     return letter in "rl"
 
@@ -51,6 +54,9 @@ def is_diphthong(syllabe, letter):
     lastletter = syllabe[-1]
     
     if not is_vowel(lastletter):
+        return False
+        
+    if is_open_vowel(lastletter) and is_open_vowel(letter):
         return False
         
     return True
