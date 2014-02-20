@@ -1,6 +1,6 @@
 
-class Silabeador:
-    def parse(self, text):
+class Silabeo:
+    def parse(text):
         result = []
         syllable = ""
         lastsyllable = ""
