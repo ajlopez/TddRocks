@@ -23,5 +23,13 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("sa", result[0])
         self.assertEqual("la", result[1])
 
+    def test_consonant_vowel_consonant_othervowel(self):
+        sil = Silabeador()
+        result = sil.parse("sale")
+        print(result)
+        self.assertEqual(2, len(result))
+        self.assertEqual("sa", result[0])
+        self.assertEqual("le", result[1])
+
 if __name__ == '__main__':
     unittest.main()
