@@ -111,6 +111,22 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual(2, len(result))
         self.assertEqual("rí", result[0])
         self.assertEqual("os", result[1])
+        
+    def test_udieresis(self):
+        sil = Silabeador()
+        result = sil.parse("santigüar")
+        self.assertEqual(3, len(result))
+        self.assertEqual("san", result[0])
+        self.assertEqual("ti", result[1])
+        self.assertEqual("güar", result[2])
+
+    def test_soft_gconsontante_vowel(self):
+        sil = Silabeador()
+        result = sil.parse("guisante")
+        self.assertEqual(3, len(result))
+        self.assertEqual("gui", result[0])
+        self.assertEqual("san", result[1])
+        self.assertEqual("te", result[2])
                 
 if __name__ == '__main__':
     unittest.main()

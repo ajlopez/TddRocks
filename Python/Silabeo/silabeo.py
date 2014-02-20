@@ -35,7 +35,7 @@ def is_open_vowel(letter):
     return letter in "aeoáéóíú"
 
 def is_ending_consonant(letter):
-    return letter in "rl"
+    return letter in "rlns"
 
 def use_next_letter(text, position, letter):
     if position >= len(text):
