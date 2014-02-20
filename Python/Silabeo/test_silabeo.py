@@ -150,6 +150,13 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual(2, len(result))
         self.assertEqual("Huay", result[0])
         self.assertEqual("co", result[1])
+
+    def test_simple_triphthong(self):
+        sil = Silabeador()
+        result = sil.parse("hioides")
+        self.assertEqual(2, len(result))
+        self.assertEqual("hioi", result[0])
+        self.assertEqual("des", result[1])
         
 if __name__ == '__main__':
     unittest.main()
