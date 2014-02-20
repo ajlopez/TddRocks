@@ -29,10 +29,10 @@ class Silabeador:
         return result
         
 def is_vowel(letter):
-    return letter in "aeiou"
+    return letter in "aeiouáéíóú"
 
 def is_open_vowel(letter):
-    return letter in "aeo"
+    return letter in "aeoáéóíú"
 
 def is_ending_consonant(letter):
     return letter in "rl"

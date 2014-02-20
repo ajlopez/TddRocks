@@ -96,6 +96,21 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual(2, len(result))
         self.assertEqual("ciu", result[0])
         self.assertEqual("dad", result[1])
-        
+
+    def test_word_ending_with_aacute(self):
+        sil = Silabeador()
+        result = sil.parse("álamo")
+        self.assertEqual(3, len(result))
+        self.assertEqual("á", result[0])
+        self.assertEqual("la", result[1])
+        self.assertEqual("mo", result[2])
+
+    def test_acute_open_vowel_in_false_diphtong(self):
+        sil = Silabeador()
+        result = sil.parse("ríos")
+        self.assertEqual(2, len(result))
+        self.assertEqual("rí", result[0])
+        self.assertEqual("os", result[1])
+                
 if __name__ == '__main__':
     unittest.main()
