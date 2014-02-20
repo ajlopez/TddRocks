@@ -89,6 +89,13 @@ class SilabeadorTests(unittest.TestCase):
         self.assertEqual("po", result[0])
         self.assertEqual("e", result[1])
         self.assertEqual("ma", result[2])
+
+    def test_word_ending_with_dconsonant(self):
+        sil = Silabeador()
+        result = sil.parse("ciudad")
+        self.assertEqual(2, len(result))
+        self.assertEqual("ciu", result[0])
+        self.assertEqual("dad", result[1])
         
 if __name__ == '__main__':
     unittest.main()

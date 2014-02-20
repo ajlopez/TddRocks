@@ -18,6 +18,8 @@ class Silabeador:
                 syllabe = ""
             elif is_ending_consonant(letter) and not use_next_letter(text, k + 1, letter):
                 result[len(result) - 1] += letter
+            elif k == len(text) - 1:
+                result[len(result) - 1] += letter
             else:
                 syllabe += letter
                 
