@@ -9,21 +9,26 @@
     {
         public object Solve(int nrows, int ncols, int nmines)
         {
-            if (nrows * ncols - nmines <= 4)
-                return "Impossible";
+            int nempty = nrows * ncols - nmines;
 
-            for (int k = nrows; k >= 2; k--)
-            {
-                int j = nmines / k;
+            for (int k = nrows; k >= (nrows == 1 ? 1 : 2); k--)
+                for (int j = ncols; j >= (ncols == 1 ? 1 : 2); j--)
+                {
+                    int size = k * j;
 
-                if (j < 1)
-                    continue;
+                    if (size > nempty)
+                        continue;
 
-                int size = k * j;
+                    int rest = nempty % size;
 
-                if ((nmines % size) % 2 == 0)
-                    return Generate(nrows, ncols, k, j, size);
-            }
+                    if (rest == 0)
+                        return Generate(nrows, ncols, k, j, 0);
+
+                    if (rest == 1)
+                        continue;
+
+                    return Generate(nrows, ncols, k, j, rest);
+                }
 
             return "Impossible";
         }

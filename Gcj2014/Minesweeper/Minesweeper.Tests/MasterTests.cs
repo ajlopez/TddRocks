@@ -16,6 +16,8 @@
 
             Assert.AreEqual("Impossible", master.Solve(5, 5, 23));
             Assert.AreEqual("Impossible", master.Solve(2, 2, 1));
+            Assert.AreNotEqual("Impossible", master.Solve(4, 7, 3));
+            Assert.AreNotEqual("Impossible", master.Solve(3, 1, 1));
         }
     }
 }
