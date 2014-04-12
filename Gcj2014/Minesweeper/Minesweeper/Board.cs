@@ -35,6 +35,11 @@
                     this.cells[k, j] = '.';
         }
 
+        public void SetClick(int nr, int nc)
+        {
+            this.cells[nr, nc] = 'c';
+        }
+
         private string ToLine(int nrow)
         {
             string result = string.Empty;
