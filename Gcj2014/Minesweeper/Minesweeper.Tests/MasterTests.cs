@@ -14,10 +14,48 @@
         {
             Master master = new Master();
 
+            Assert.AreEqual("Impossible", master.Solve(2, 1, 1));
             Assert.AreEqual("Impossible", master.Solve(5, 5, 23));
             Assert.AreEqual("Impossible", master.Solve(2, 2, 1));
             Assert.AreNotEqual("Impossible", master.Solve(4, 7, 3));
             Assert.AreNotEqual("Impossible", master.Solve(3, 1, 1));
+        }
+
+        [TestMethod]
+        public void SolveSampleCaseOne()
+        {
+            Master master = new Master();
+
+            var result = master.Solve(3, 1, 1);
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(IList<string>));
+
+            var lines = (IList<string>)result;
+
+            Assert.AreEqual(3, lines.Count);
+            Assert.AreEqual("c", lines[0]);
+            Assert.AreEqual(".", lines[1]);
+            Assert.AreEqual("*", lines[2]);
+        }
+
+        [TestMethod]
+        public void SolveSimpleCase()
+        {
+            Master master = new Master();
+
+            var result = master.Solve(4, 4, 16 - 9);
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(IList<string>));
+
+            var lines = (IList<string>)result;
+
+            Assert.AreEqual(4, lines.Count);
+            Assert.AreEqual("c..*", lines[0]);
+            Assert.AreEqual("...*", lines[1]);
+            Assert.AreEqual("...*", lines[2]);
+            Assert.AreEqual("****", lines[3]);
         }
     }
 }

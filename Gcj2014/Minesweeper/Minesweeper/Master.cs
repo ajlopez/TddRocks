@@ -33,9 +33,12 @@
             return "Impossible";
         }
 
-        private object Generate(int nrows, int ncols, int height, int width, int size)
+        private object Generate(int nrows, int ncols, int height, int width, int rest)
         {
-            return null;
+            Board board = new Board(nrows, ncols);
+            board.SetEmpty(height, width);
+            board.SetClick(0, 0);
+            return board.ToLines();
         }
     }
 }
