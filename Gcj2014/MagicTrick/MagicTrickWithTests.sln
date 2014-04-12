@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicTrick", "MagicTrick\MagicTrick.csproj", "{E1843209-E006-428C-ABE6-11295FAA0646}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicTrick.Tests", "MagicTrick.Tests\MagicTrick.Tests.csproj", "{46168DD9-8149-48C3-9133-2B9083B24536}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B2FD850-0400-4284-9556-3A00A55D5801}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
@@ -35,6 +37,16 @@ Global
 		{E1843209-E006-428C-ABE6-11295FAA0646}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E1843209-E006-428C-ABE6-11295FAA0646}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E1843209-E006-428C-ABE6-11295FAA0646}.Release|x86.ActiveCfg = Release|Any CPU
+		{46168DD9-8149-48C3-9133-2B9083B24536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46168DD9-8149-48C3-9133-2B9083B24536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46168DD9-8149-48C3-9133-2B9083B24536}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{46168DD9-8149-48C3-9133-2B9083B24536}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{46168DD9-8149-48C3-9133-2B9083B24536}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{46168DD9-8149-48C3-9133-2B9083B24536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46168DD9-8149-48C3-9133-2B9083B24536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46168DD9-8149-48C3-9133-2B9083B24536}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{46168DD9-8149-48C3-9133-2B9083B24536}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{46168DD9-8149-48C3-9133-2B9083B24536}.Release|x86.ActiveCfg = Release|Any CPU
 		{7EF784F4-9DDF-4F9A-AC5E-C648512E4ACB}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{7EF784F4-9DDF-4F9A-AC5E-C648512E4ACB}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{7EF784F4-9DDF-4F9A-AC5E-C648512E4ACB}.Debug|Mixed Platforms.Build.0 = Debug|x86
