@@ -1,0 +1,1 @@
+function%20fibo(n)%20{%20if%20(n%20%3D%3D%200)%20return%200%3B%20if%20(n%20%3D%3D%201)%20return%201%3B%20return%20fibo(n-2)%20%2B%20fibo(n-1)%3B%20}%20var%20n%20%3D%20parseInt(process.argv[2])%3B%20console.log(fibo(n))%3B%20
