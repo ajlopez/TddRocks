@@ -78,6 +78,28 @@
         }
 
         [TestMethod]
+        public void SolveSampleCaseTwoRotated()
+        {
+            Master master = new Master();
+
+            var result = master.Solve(7, 4, 3);
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(IList<string>));
+
+            var lines = (IList<string>)result;
+
+            Assert.AreEqual(7, lines.Count);
+            Assert.AreEqual("c...", lines[0]);
+            Assert.AreEqual("....", lines[1]);
+            Assert.AreEqual("....", lines[2]);
+            Assert.AreEqual("....", lines[3]);
+            Assert.AreEqual("...*", lines[4]);
+            Assert.AreEqual("...*", lines[5]);
+            Assert.AreEqual("...*", lines[6]);
+        }
+
+        [TestMethod]
         public void SolveSampleCaseThree()
         {
             Master master = new Master();
