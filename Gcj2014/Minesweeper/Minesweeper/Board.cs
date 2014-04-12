@@ -35,6 +35,11 @@
                     this.cells[k, j] = '.';
         }
 
+        public void SetEmptyCell(int nr, int nc)
+        {
+            this.cells[nr, nc] = '.';
+        }
+
         public void SetClick(int nr, int nc)
         {
             this.cells[nr, nc] = 'c';

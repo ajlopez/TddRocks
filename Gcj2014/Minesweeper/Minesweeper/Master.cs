@@ -27,7 +27,8 @@
                     if (rest == 1)
                         continue;
 
-                    return Generate(nrows, ncols, k, j, rest);
+                    if (rest < k * (ncols - j))
+                        return Generate(nrows, ncols, k, j, rest);
                 }
 
             return "Impossible";
@@ -38,6 +39,30 @@
             Board board = new Board(nrows, ncols);
             board.SetEmpty(height, width);
             board.SetClick(0, 0);
+
+            int y = 0;
+            int x = width;
+
+            while (rest >= 2 && y + 1 < height)
+            {
+                board.SetEmptyCell(y, x);
+                board.SetEmptyCell(y + 1, x);
+                rest -= 2;
+                x++;
+
+                if (x >= ncols)
+                {
+                    y += 2;
+                    x = width;
+
+                    if (y >= height)
+                        break;
+                }
+            }
+
+            if (rest > 0 && y < height)
+                board.SetEmptyCell(y, x);
+
             return board.ToLines();
         }
     }
