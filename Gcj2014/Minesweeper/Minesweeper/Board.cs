@@ -28,6 +28,13 @@
             return lines;
         }
 
+        public void SetEmpty(int nr, int nc)
+        {
+            for (int k = 0; k < nr; k++)
+                for (int j = 0; j < nc; j++)
+                    this.cells[k, j] = '.';
+        }
+
         private string ToLine(int nrow)
         {
             string result = string.Empty;

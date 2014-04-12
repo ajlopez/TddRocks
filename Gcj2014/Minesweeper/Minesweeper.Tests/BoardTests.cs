@@ -33,5 +33,22 @@
             Assert.AreEqual("***", result[0]);
             Assert.AreEqual("***", result[1]);
         }
+
+        [TestMethod]
+        public void FourByFourWithThreeByTwoEmpty()
+        {
+            Board board = new Board(4, 4);
+
+            board.SetEmpty(3, 2);
+
+            var result = board.ToLines();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(4, result.Count);
+            Assert.AreEqual("..**", result[0]);
+            Assert.AreEqual("..**", result[1]);
+            Assert.AreEqual("..**", result[2]);
+            Assert.AreEqual("****", result[3]);
+        }
     }
 }
