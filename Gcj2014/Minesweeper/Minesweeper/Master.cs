@@ -27,7 +27,7 @@
                     if (rest == 1)
                         continue;
 
-                    if (rest < k * (ncols - j))
+                    if (rest % 2 == 0 || (k > 2 && j > 2))
                         return Generate(nrows, ncols, k, j, rest);
                 }
 
@@ -43,7 +43,7 @@
             int y = 0;
             int x = width;
 
-            while (rest >= 2 && y + 1 < height)
+            while (rest >= 2 && y + 1 < height && x < ncols)
             {
                 board.SetEmptyCell(y, x);
                 board.SetEmptyCell(y + 1, x);
@@ -60,8 +60,23 @@
                 }
             }
 
-            if (rest > 0 && y < height)
-                board.SetEmptyCell(y, x);
+            if (rest > 0 && y == 0)
+            {
+                y = 2;
+                x = width;
+            }
+
+            while (rest > 0 && y < height && x < ncols)
+            {
+                board.SetEmptyCell(y, x++);
+                rest--;
+
+                if (x >= ncols)
+                {
+                    y++;
+                    x = width;
+                }
+            }
 
             return board.ToLines();
         }
