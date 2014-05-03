@@ -109,5 +109,11 @@
         {
             Assert.AreEqual(0, this.repeater.Moves(new string[] { "abc", "abc" }));
         }
+
+        [TestMethod]
+        public void FifthSample()
+        {
+            Assert.AreEqual(3, this.repeater.Moves(new string[] { "aabc", "abbc", "abcc" }));
+        }
     }
 }
