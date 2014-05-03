@@ -85,5 +85,11 @@
             Assert.AreEqual(-1, this.repeater.Moves(new string[] { "ab", "abc" }));
             Assert.AreEqual(-1, this.repeater.Moves(new string[] { "cab", "bc" }));
         }
+
+        [TestMethod]
+        public void FirsSample()
+        {
+            Assert.AreEqual(1, this.repeater.Moves(new string[] { "mmaw", "maw" }));
+        }
     }
 }

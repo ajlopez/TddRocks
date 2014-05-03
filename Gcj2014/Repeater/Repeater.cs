@@ -61,7 +61,34 @@
             if (!this.AreSolvable(groups))
                 return -1;
 
-            throw new NotImplementedException();
+            int result = 0;
+
+            for (int k = 0; k < groups.Count; k++)
+                result += this.MinimalMoves(groups.Select(grs => grs[k]).ToList());
+
+            return groups.Sum(grs => this.MinimalMoves(grs));
+        }
+
+        private int MinimalMoves(IList<Group> groups)
+        {
+            int result = Int32.MaxValue;
+
+            int minlength = groups.Min(gr => gr.Count);
+            int maxlength = groups.Max(gr => gr.Count);
+
+            for (int k = minlength; k <= maxlength; k++)
+            {
+                int moves = DistanceTo(groups, k);
+                if (moves < result)
+                    result = moves;
+            }
+
+            return result;
+        }
+
+        private int DistanceTo(IList<Group> groups, int count)
+        {
+            return groups.Sum(gr => Math.Abs(gr.Count - count));
         }
     }
 }
