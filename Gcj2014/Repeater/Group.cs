@@ -15,5 +15,9 @@
             this.letter = letter;
             this.count = count;
         }
+
+        public char Letter { get { return this.letter; } }
+
+        public int Count { get { return this.count; } }
     }
 }
