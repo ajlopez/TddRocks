@@ -11,7 +11,7 @@
         {
             IList<Group> groups = new List<Group>();
 
-            if (text.Length == 0)
+            if (string.IsNullOrWhiteSpace(text))
                 return groups;
 
             char letter = text[0];

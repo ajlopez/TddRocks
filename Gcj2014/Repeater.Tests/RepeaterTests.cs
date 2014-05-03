@@ -51,5 +51,23 @@
             Assert.AreEqual('b', result[1].Letter);
             Assert.AreEqual(2, result[1].Count);
         }
+
+        [TestMethod]
+        public void GetNoGroupFromEmptyString()
+        {
+            var result = this.repeater.ToGroups(string.Empty);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(0, result.Count);
+        }
+
+        [TestMethod]
+        public void GetNoGroupFromNullString()
+        {
+            var result = this.repeater.ToGroups(null);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(0, result.Count);
+        }
     }
 }
