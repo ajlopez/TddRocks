@@ -63,10 +63,10 @@
 
             int result = 0;
 
-            for (int k = 0; k < groups.Count; k++)
+            for (int k = 0; k < groups[0].Count; k++)
                 result += this.MinimalMoves(groups.Select(grs => grs[k]).ToList());
 
-            return groups.Sum(grs => this.MinimalMoves(grs));
+            return result;
         }
 
         private int MinimalMoves(IList<Group> groups)

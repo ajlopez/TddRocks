@@ -97,5 +97,11 @@
         {
             Assert.AreEqual(-1, this.repeater.Moves(new string[] { "gcj", "cj" }));
         }
+
+        [TestMethod]
+        public void ThirdSample()
+        {
+            Assert.AreEqual(4, this.repeater.Moves(new string[] { "aaabbb", "ab", "aabb" }));
+        }
     }
 }
