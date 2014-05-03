@@ -69,5 +69,21 @@
             Assert.IsNotNull(result);
             Assert.AreEqual(0, result.Count);
         }
+
+        [TestMethod]
+        public void AreSolvable()
+        {
+            Assert.IsTrue(this.repeater.AreSolvable(new IList<Group>[] { this.repeater.ToGroups("ab"), this.repeater.ToGroups("aabbb"), this.repeater.ToGroups("aaab") }));
+            Assert.IsFalse(this.repeater.AreSolvable(new IList<Group>[] { this.repeater.ToGroups("ab"), this.repeater.ToGroups("aabbb"), this.repeater.ToGroups("aaabc") }));
+            Assert.IsFalse(this.repeater.AreSolvable(new IList<Group>[] { this.repeater.ToGroups("abc"), this.repeater.ToGroups("aabbb"), this.repeater.ToGroups("aaab") }));
+        }
+
+        [TestMethod]
+        public void NoMove()
+        {
+            Assert.AreEqual(-1, this.repeater.Moves(new string[] { "ab", "bc" }));
+            Assert.AreEqual(-1, this.repeater.Moves(new string[] { "ab", "abc" }));
+            Assert.AreEqual(-1, this.repeater.Moves(new string[] { "cab", "bc" }));
+        }
     }
 }
