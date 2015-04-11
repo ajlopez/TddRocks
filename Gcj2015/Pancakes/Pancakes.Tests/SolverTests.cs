@@ -61,7 +61,7 @@
             Assert.AreEqual(5, Solver.Resolve(new int[] { 5, 5, 3 }));
             Assert.AreEqual(5, Solver.Resolve(new int[] { 5, 5, 2 }));
             Assert.AreEqual(4, Solver.Resolve(new int[] { 4, 4, 2 }));
-            Assert.AreEqual(4, Solver.Resolve(new int[] { 1, 3, 5, 5, 5 }));
+            Assert.AreEqual(5, Solver.Resolve(new int[] { 1, 3, 5, 5, 5 }));
             Assert.AreEqual(5, Solver.Resolve(new int[] { 5, 5, 1 }));
         }
 
@@ -70,6 +70,38 @@
         {
             Assert.AreEqual(5, Solver.Resolve(new int[] { 5, 5, 5, 5, 5, 5, 4, 4 }));
             Assert.AreEqual(7, Solver.Resolve(new int[] { 5, 5, 5, 5, 9, 9 }));
+            Assert.AreEqual(6, Solver.Resolve(new int[] { 9, 3, 5, 1 }));
+            Assert.AreEqual(6, Solver.Resolve(new int[] { 3, 7, 8 }));
+            Assert.AreEqual(6, Solver.Resolve(new int[] { 4, 6, 3, 7 }));
+            Assert.AreEqual(7, Solver.Resolve(new int[] { 9, 6 }));
+            Assert.AreEqual(8, Solver.Resolve(new int[] { 3, 5, 8, 8, 6 }));
+            Assert.AreEqual(4, Solver.Resolve(new int[] { 4, 3, 2, 1 }));
+            Assert.AreEqual(6, Solver.Resolve(new int[] { 6, 8, 2, 2 }));
+            Assert.AreEqual(8, Solver.Resolve(new int[] { 5, 6, 9, 6, 9, 6 }));
+            Assert.AreEqual(8, Solver.Resolve(new int[] { 6, 6, 6, 6, 9, 9 }));
+            Assert.AreEqual(5, Solver.Resolve(new int[] { 4, 5, 2, 1, 5 }));
+            Assert.AreEqual(5, Solver.Resolve(new int[] { 4, 4, 5, 2, 5 }));
+            Assert.AreEqual(8, Solver.Resolve(new int[] { 5, 5, 5, 9, 9, 9 }));
+            Assert.AreEqual(5, Solver.Resolve(new int[] { 8, 4, 2 }));
+            Assert.AreEqual(8, Solver.Resolve(new int[] { 3, 6, 6, 6, 9, 9 }));
+            Assert.AreEqual(4, Solver.Resolve(new int[] { 3, 3, 3, 2, 5 }));
+            Assert.AreEqual(6, Solver.Resolve(new int[] { 1, 7, 7 }));
+            Assert.AreEqual(5, Solver.Resolve(new int[] { 1, 4, 5, 2, 3 }));
+            Assert.AreEqual(6, Solver.Resolve(new int[] { 3, 3, 8, 5 }));
+            Assert.AreEqual(5, Solver.Resolve(new int[] { 8, 4, 4 }));
+            Assert.AreEqual(5, Solver.Resolve(new int[] { 8, 4 }));
+            Assert.AreEqual(7, Solver.Resolve(new int[] { 6, 6, 8, 3 }));
+        }
+
+        [TestMethod]
+        public void ResolveRepeated()
+        {
+            Assert.AreEqual(9, Solver.Resolve(new int[] { 9, 9, 9, 9, 9, 9 }));
+            Assert.AreEqual(8, Solver.Resolve(new int[] { 8, 8, 8, 8, 8 }));
+            Assert.AreEqual(8, Solver.Resolve(new int[] { 8, 8, 8, 8 }));
+            Assert.AreEqual(7, Solver.Resolve(new int[] { 8, 8, 8 }));
+            Assert.AreEqual(9, Solver.Resolve(new int[] { 9, 9, 9, 9 }));
+            Assert.AreEqual(8, Solver.Resolve(new int[] { 9, 9, 9 }));
         }
     }
 }

@@ -13,47 +13,10 @@
             if (pancakes.Count == 0)
                 return 0;
 
-            IList<int> newpancakes1 = new List<int>();
+            int ncount1 = ResolveSpecial(pancakes);
+            int ncount2 = ResolveNormal(pancakes);
 
-            int maxvalue = pancakes.Max();
-
-            if (maxvalue == 1)
-                return 1;
-
-            int split = maxvalue / 2;
-            int maxcount = pancakes.Count(n => n == maxvalue);
-
-            foreach (int value in pancakes)
-                if (value == maxvalue)
-                    newpancakes1.Add(value - split);
-                else
-                    newpancakes1.Add(value);
-
-            for (int k = 0; k < maxcount; k++)
-                newpancakes1.Add(split);
-
-            int maxvalue1 = newpancakes1.Max();
-            int ncount1 = Resolve(newpancakes1);
-
-            if (maxcount + ncount1 <= maxvalue)
-                return maxcount + ncount1;
-
-            IList<int> newpancakes2 = new List<int>();
-
-            foreach (int value in pancakes)
-            {
-                int newvalue = value - 1;
-
-                if (newvalue > 0)
-                    newpancakes2.Add(newvalue);
-            }
-
-            if (newpancakes2.Count == 0)
-                return 1;
-
-            int ncount2 = Resolve(newpancakes2);
-
-            return Math.Min(1 + ncount1, ncount2 + 1);
+            return Math.Min(ncount1, ncount2);
         }
 
         public static int Resolve(string values)
@@ -64,6 +27,59 @@
                 pancakes.Add(int.Parse(word));
 
             return Resolve(pancakes);
+        }
+
+        private static int ResolveSpecial(IList<int> pancakes)
+        {
+            IList<int> newpancakes = new List<int>();
+
+            int maxvalue = pancakes.Max();
+
+            if (maxvalue == 1)
+                return 1;
+
+            int split = maxvalue / 2;
+            int steps = pancakes.Count(n => n == maxvalue);
+
+            foreach (int value in pancakes)
+                if (value == maxvalue)
+                    newpancakes.Add(value - split);
+                else
+                    newpancakes.Add(value);
+
+            for (int k = 0; k < steps; k++)
+                newpancakes.Add(split);
+
+            int ncount1 = Resolve(newpancakes);
+
+            return steps + Resolve(newpancakes);
+        }
+
+        private static int ResolveNormal(IList<int> pancakes)
+        {
+            int maxvalue = pancakes.Max();
+            int minvalue = pancakes.Min();
+
+            if (minvalue == maxvalue)
+                return maxvalue;
+
+            int secondmaxvalue = pancakes.Where(n => n != maxvalue).Max();
+
+            IList<int> newpancakes = new List<int>();
+            int steps = maxvalue - secondmaxvalue;
+
+            foreach (int value in pancakes)
+            {
+                if (value == maxvalue)
+                    newpancakes.Add(secondmaxvalue);
+                else if (value > steps)
+                    newpancakes.Add(value - steps);
+            }
+
+            if (newpancakes.Count == 0)
+                return 1;
+
+            return Resolve(newpancakes) + steps;
         }
     }
 }

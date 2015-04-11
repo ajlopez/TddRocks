@@ -53,9 +53,9 @@
             p = values.Length - 1;
             long j;
 
-            for (j = tlength - 1; j > firsti + 1; j--, p = (p - 1) % values.Length)
+            for (j = tlength - 1; j > firsti + 1; j--, p = (p - 1 + values.Length) % values.Length)
             {
-                int newresult = multiplier.Multiply(result, values[p]);
+                int newresult = multiplier.Multiply(values[p], result);
 
                 if (newresult < 0)
                 {
@@ -76,6 +76,21 @@
                 return false;
 
             return true;
+        }
+
+        public static bool CanBeSolved(string values, long repeat)
+        {
+            IList<Quaternions> newvalues = new List<Quaternions>();
+
+            foreach (var ch in values)
+                if (ch == 'i')
+                    newvalues.Add(Quaternions.i);
+                else if (ch == 'j')
+                    newvalues.Add(Quaternions.j);
+                else if (ch == 'k')
+                    newvalues.Add(Quaternions.k);
+
+            return CanBeSolved(newvalues.ToArray(), repeat);
         }
     }
 }
