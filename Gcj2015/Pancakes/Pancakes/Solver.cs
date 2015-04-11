@@ -22,6 +22,24 @@
         {
             IList<int> newpancakes = new List<int>();
 
+            int maxvalue = pancakes.Max();
+            int maxcount = pancakes.Count(n => n == maxvalue);
+            int gain = maxvalue / 2;
+
+            if (gain > 0 && gain >= maxcount)
+            {
+                foreach (int value in pancakes)
+                    if (value == maxvalue)
+                        newpancakes.Add(value - gain);
+                    else
+                        newpancakes.Add(value);
+
+                for (int k = 0; k < maxcount; k++)
+                    newpancakes.Add(gain);
+
+                return newpancakes;
+            }
+
             foreach (int value in pancakes)
             {
                 int newvalue = value - 1;
