@@ -23,23 +23,20 @@
             int split = maxvalue / 2;
             int maxcount = pancakes.Count(n => n == maxvalue);
 
-            bool found = false;
             foreach (int value in pancakes)
-                if (!found && value == maxvalue)
-                {
+                if (value == maxvalue)
                     newpancakes1.Add(value - split);
-                    found = true;
-                }
                 else
                     newpancakes1.Add(value);
 
-            newpancakes1.Add(split);
+            for (int k = 0; k < maxcount; k++)
+                newpancakes1.Add(split);
 
             int maxvalue1 = newpancakes1.Max();
             int ncount1 = Resolve(newpancakes1);
 
-            if (maxvalue1 >= ncount1)
-                return 1 + ncount1;
+            if (maxcount + ncount1 <= maxvalue)
+                return maxcount + ncount1;
 
             IList<int> newpancakes2 = new List<int>();
 
