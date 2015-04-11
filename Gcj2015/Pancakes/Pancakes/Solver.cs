@@ -18,6 +18,16 @@
             return rounds;
         }
 
+        public static int Resolve(string values)
+        {
+            IList<int> pancakes = new List<int>();
+
+            foreach (var word in values.Split(' '))
+                pancakes.Add(int.Parse(word));
+
+            return Resolve(pancakes);
+        }
+
         private static IList<int> DoRound(IList<int> pancakes)
         {
             IList<int> newpancakes = new List<int>();
@@ -28,14 +38,17 @@
 
             if (gain > 0 && gain >= maxcount)
             {
+                bool found = false;
                 foreach (int value in pancakes)
-                    if (value == maxvalue)
+                    if (!found && value == maxvalue)
+                    {
                         newpancakes.Add(value - gain);
+                        found = true;
+                    }
                     else
                         newpancakes.Add(value);
 
-                for (int k = 0; k < maxcount; k++)
-                    newpancakes.Add(gain);
+                newpancakes.Add(gain);
 
                 return newpancakes;
             }
