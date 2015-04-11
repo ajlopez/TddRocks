@@ -10,30 +10,16 @@
     {
         public static int Resolve(IList<int> pancakes)
         {
-            int rounds = 1;
+            if (pancakes.Count == 0)
+                return 0;
 
-            for (var newpancakes = DoRound(pancakes); newpancakes.Count > 0; newpancakes = DoRound(newpancakes))
-                rounds++;
-
-            return rounds;
-        }
-
-        public static int Resolve(string values)
-        {
-            IList<int> pancakes = new List<int>();
-
-            foreach (var word in values.Split(' '))
-                pancakes.Add(int.Parse(word));
-
-            return Resolve(pancakes);
-        }
-
-        private static IList<int> DoRound(IList<int> pancakes)
-        {
             IList<int> newpancakes1 = new List<int>();
-            IList<int> newpancakes2 = new List<int>();
 
             int maxvalue = pancakes.Max();
+
+            if (maxvalue == 1)
+                return 1;
+
             int split = maxvalue / 2;
             int maxcount = pancakes.Count(n => n == maxvalue);
 
@@ -49,6 +35,14 @@
 
             newpancakes1.Add(split);
 
+            int maxvalue1 = newpancakes1.Max();
+            int ncount1 = Resolve(newpancakes1);
+
+            if (maxvalue1 >= ncount1)
+                return 1 + ncount1;
+
+            IList<int> newpancakes2 = new List<int>();
+
             foreach (int value in pancakes)
             {
                 int newvalue = value - 1;
@@ -57,18 +51,22 @@
                     newpancakes2.Add(newvalue);
             }
 
-            if (newpancakes1.Count == 0)
-                return newpancakes1;
             if (newpancakes2.Count == 0)
-                return newpancakes2;
+                return 1;
 
-            var value1 = ((double)newpancakes1.Sum()) / newpancakes1.Count;
-            var value2 = ((double)newpancakes2.Sum()) / newpancakes2.Count;
+            int ncount2 = Resolve(newpancakes2);
 
-            if (value1 < value2)
-                return newpancakes1;
-            else
-                return newpancakes2;
+            return Math.Min(1 + ncount1, ncount2 + 1);
+        }
+
+        public static int Resolve(string values)
+        {
+            IList<int> pancakes = new List<int>();
+
+            foreach (var word in values.Split(' '))
+                pancakes.Add(int.Parse(word));
+
+            return Resolve(pancakes);
         }
     }
 }

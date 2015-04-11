@@ -64,5 +64,12 @@
             Assert.AreEqual(5, Solver.Resolve(new int[] { 1, 3, 5, 5, 5 }));
             Assert.AreEqual(5, Solver.Resolve(new int[] { 5, 5, 1 }));
         }
+
+        [TestMethod]
+        public void ResolveSplit()
+        {
+            Assert.AreEqual(5, Solver.Resolve(new int[] { 5, 5, 5, 5, 5, 5, 4, 4 }));
+            Assert.AreEqual(7, Solver.Resolve(new int[] { 5, 5, 5, 5, 9, 9 }));
+        }
     }
 }
