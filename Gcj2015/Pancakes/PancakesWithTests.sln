@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pancakes", "Pancakes\Pancakes.csproj", "{2B6ED91A-7180-419C-B5A4-1A6F2148B6A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pancakes.Tests", "Pancakes.Tests\Pancakes.Tests.csproj", "{C31AFE95-C434-4B9F-999E-7C031E574F7E}"
