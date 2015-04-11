@@ -33,22 +33,25 @@
             IList<int> newpancakes = new List<int>();
 
             int maxvalue = pancakes.Max();
+            int secondmax = (maxvalue % 2 == 1) ? maxvalue / 2 + 1 : maxvalue / 2;
+            var second = pancakes.Where(n => n != maxvalue).ToList();
+            int maxvalue2 = second.Count > 0 ? second.Max() : 0;
+            int next = Math.Max(secondmax, maxvalue2);
             int maxcount = pancakes.Count(n => n == maxvalue);
-            int gain = maxvalue / 2;
 
-            if (gain > 0 && gain >= maxcount)
+            if (next + maxcount <= maxvalue)
             {
                 bool found = false;
                 foreach (int value in pancakes)
                     if (!found && value == maxvalue)
                     {
-                        newpancakes.Add(value - gain);
+                        newpancakes.Add(value - secondmax);
                         found = true;
                     }
                     else
                         newpancakes.Add(value);
 
-                newpancakes.Add(gain);
+                newpancakes.Add(secondmax);
 
                 return newpancakes;
             }
